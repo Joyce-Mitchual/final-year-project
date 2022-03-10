@@ -1,0 +1,273 @@
+.navbar1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  background-color: #333333;
+  color: #fff;
+  /* border: 1px solid red; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #333333;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin-left: 22px;
+}
+
+li {
+  list-style: none;
+}
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #4b4b4b;
+  color: #fff;
+}
+.nav-links a {
+  color: #fff;
+}
+/* LOGO */
+.logo {
+  font-size: 32px;
+  margin-left: 50px;
+}
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+.menu li:hover {
+  background-color: rgb(218, 53, 53);
+  border-radius: 1px;
+  transition: 0.3s ease;
+}
+
+.menu li:active {
+    text-decoration: underline white;
+  }
+.menu li {
+  padding: 5px 14px;
+}
+/* DROPDOWN MENU */
+.services {
+  position: relative;
+}
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type="checkbox"] {
+  display: none;
+}
+/*HAMBURGER MENU*/
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    background-color: rgb(65, 66, 66);
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+  .menu li:hover {
+    display: inline-block;
+    background-color: #4c9e9e;
+    transition: 0.3s ease;
+  }
+  .menu li + li {
+    margin-top: 12px;
+  }
+}
+
+.navbar3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  background-color: rgb(97, 96, 97);
+  color: #fff;
+  /* border: 1px solid red; */
+}
+
+
+.navbar3 a{
+  margin-left: 13px;
+}
+
+
+
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 30.33%;
+    padding: 20px;
+    height: 300px; /* Should be removed. Only for demonstration */
+    margin-left: 35px;
+    margin-top: 20px;
+    
+  }
+  
+  .column2 {
+    float: left;
+    width: 30.33%;
+    padding: 10px;
+    height: 300px;
+    margin-top:20px;/* Should be removed. Only for demonstration */
+    margin-left: 35px;
+    /* margin-bottom: 90px; */
+    
+  }
+
+
+  .column3 {
+    float: left;
+    width: 30.33%;
+    padding: 20px;
+    height: 300px; /* Should be removed. Only for demonstration */
+    margin-left: 35px;
+    margin-top: 20px; 
+   
+
+  }
+  
+
+  #col{
+  margin-left:30px;
+  height:200px;
+  
+  }
+  
+  
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .row2:after {
+   
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .row3:after {
+   
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  footer {
+    text-align: center;
+    padding: 3px;
+    background-color: #4b4b4b;
+    color: white;
+    margin-top: 100px;
+    height: 190px;
+    bottom: 0;
+    width: 100.5%;
+    margin-left: -0.5%;
+   
+  }
+
+/* .containerOne{
+
+    width: 27%;
+    height: 450px;
+    background-color: #4b4b4b;
+    margin-top: 12px;
+    margin-left:30px;
+} */
+
+
+/* .containerTwo{
+    width: 27%;
+    height: 400px;
+    background-color: #4b4b4b;
+    margin-top: 12px;
+    margin-left:30px;
+} */
+
+
+#col1{
+
+  height: 450px;
+  background-color: #4b4b4b;
+
+}
+
+#col2{
+  height: 290px; 
+  background-color: #4b4b4b;
+}
+
+#col3{
+  height: 180px; 
+  background-color: #4b4b4b;
+}
+
+
+#col4{
+  height: 450px; 
+  background-color: #4b4b4b;
+}
+
+#col5{
+  margin-top: -130px; 
+  height: 150px;
+  background-color: #4b4b4b;
+}
+
+#col6{
+  margin-top: -240px; 
+  height: 220px;
+  background-color: #4b4b4b;
+}
+
+#col7{
+  height: 130px;
+  width: 96%;
+  margin-bottom: -70px;
+  background-color: #4b4b4b;
+  
+}
+
+
+
+
+

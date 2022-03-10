@@ -1,0 +1,131 @@
+.headers {
+  border: 1px solid rgb(49, 49, 49); 
+  padding: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 40px;
+  margin-bottom: 12px;
+  margin-top: 18px;
+}
+
+h2 {
+  color: #b5121b;
+  margin-left: 54px;
+  margin-right: 54px;
+  margin-top: -5px;
+  font-family: "Times New Roman", Times, serif;
+
+}
+
+.bod {
+  height: 400px;
+  border: 1px solid rgb(49, 49, 49); 
+  margin-left: 30px;
+  margin-right: 30px;
+  overflow-y: scroll;
+  
+}
+
+
+
+.bodText {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  line-height: 1.9;
+  color: #373a3c;
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  padding: 15px;
+  margin-left: 54px;
+  margin-right: 54px;
+  margin-top: -10px;
+}
+
+.container {
+  margin-left: 9%;
+  margin-right: 5%;
+  /* border: 1px solid saddlebrown; */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 7px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+  margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  width: 70%;
+  height: 180px;
+  padding: 18px;
+  text-align: center;
+  border: 1px solid rgb(131, 129, 129);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#cardImg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 9px;
+}
+
+.text {
+  font-family: "Times New Roman", Times, serif;
+  color: #b5121b;
+  font-size: 12px;
+  text-align: start;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: #b5121b;
+  color: white;
+  margin-top: 120px;
+  height: 153px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-left: -0.5%;
+}
+
+.bodContent{
+    margin-top: 20px;
+}
