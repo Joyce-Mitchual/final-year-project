@@ -40,6 +40,10 @@ li {
     color: #fff;
 }
 
+.navbar a{
+ margin-left: 113px;
+}
+
 .nav-links a {
     color: #fff;
 }
@@ -47,7 +51,7 @@ li {
 /* LOGO */
 .logo {
     font-size: 32px;
-    margin-left: 56px;
+    margin-left: 137px;
 }
 
 /* NAVBAR MENU */
@@ -76,18 +80,6 @@ li {
     position: relative;
 }
 
-/*RESPONSIVE NAVBAR MENU STARTS*/
-/* CHECKBOX HACK */
-input[type="checkbox"] {
-    display: none;
-}
-
-/*HAMBURGER MENU*/
-.hamburger {
-    display: none;
-    font-size: 24px;
-    user-select: none;
-}
 
 /* APPLYING MEDIA QUERIES */
 @media (max-width: 768px) {
@@ -120,6 +112,19 @@ input[type="checkbox"] {
     background-color: rgb(97, 96, 97);
     color: #fff;
     /* border: 1px solid red; */
+}
+
+.headingtwo{
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+}
+
+.navbar3 a{
+    margin-left: 120px;
 }
 
 .navbar4 {
