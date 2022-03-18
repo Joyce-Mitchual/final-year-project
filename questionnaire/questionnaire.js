@@ -1,18 +1,11 @@
-// <p>1. I need to find the way to a shop that a friend has recommended. I would: </p>
-// <input type="radio" id="css" name="fav_language" value="CSS">
-// <label for="css">Ask my friend to tell me the directions</label><br>
-// <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-// <label for="javascript">Write down the street directions I need to remember</label><br>
-// <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-// <label for="javascript">Use a map.</label><br>
 
-
+//todo all questions to the list
 const questions = [
     {
     question: "I need to find the way to a shop that a friend has recommended. I would:",
     answers: [{
             value: "Find out where the shop is in relation to somewhere I know.",
-            score: "V"
+            score: "K"
         },
         {
             value: "Ask my friend to tell me the directions",
@@ -24,7 +17,7 @@ const questions = [
         },
         {
             value: "Use a map.",
-            score: "K"
+            score: "V"
         }
     ]
 },
@@ -53,11 +46,11 @@ const questions = [
     question: `I want to find out more about a tour that I am going on. I would:`,
     answers: [{
             value: "Look at details about the highlights and activities on the tour",
-            score: "V"
+            score: "K"
         },
         {
             value: "Use a map and see where the places are.",
-            score: "A"
+            score: "V"
         },
         {
             value: "Read about the tour on the itinerary.",
@@ -65,7 +58,7 @@ const questions = [
         },
         {
             value: "Using words well in written communications.",
-            score: "K"
+            score: "A"
         }
     ]
 },
@@ -74,7 +67,7 @@ const questions = [
     answers: [
         {
             value: " Applying my knowledge in real situations.",
-            score: "V"
+            score: "K"
         },
         {
             value: "Communicating with others through discussion.",
@@ -82,14 +75,105 @@ const questions = [
         },
         {
             value: "Working with designs, maps or charts.",
-            score: "R"
+            score: "V"
         },
         {
             value: "Using words well in written communications.",
-            score: "K"
+            score: "R"
         }
     ]
-}
+},
+{
+    question: `When I am learning I:`,
+    answers: [
+        {
+            value: "like to talk things through.",
+            score: "A"
+        },
+        {
+            value: "see patterns in things.",
+            score: "V"
+        },
+        {
+            value: "use examples and applications.",
+            score: "K"
+        },
+        {
+            value: "read books, articles and handouts.",
+            score: "R"
+        }
+    ]
+},
+
+{
+    question: `I want to save more money and to decide between a range of options. I would:`,
+    answers: [
+        {
+            value: "Consider examples of each option using my financial information.",
+            score: "K"
+        },
+        {
+            value: "Read a print brochure that describes the options in detail.",
+            score: "R"
+        },
+        {
+            value: "Use graphs showing different options for different time periods. ",
+            score: "V"
+        },
+        {
+            value: "Talk with an expert about the options. ",
+            score: "A"
+        }
+    ]
+},
+
+{
+    question: `I want to learn how to play a new board game or card game. I would:`,
+    answers: [
+        {
+            value: "Watch others play the game before joining in.",
+            score: "K"
+        },
+        {
+            value: "Listen to somebody explaining it and ask questions ",
+            score: "A"
+        },
+        {
+            value: "Use the diagrams that explain the various stages, moves and strategies in the game ",
+            score: "V"
+        },
+        {
+            value: "Read the instructions. ",
+            score: "R"
+        }
+    ]
+},
+
+{
+    question: `I have a problem with my heart. I would prefer that the doctor:`,
+    answers: [
+        {
+            value: "Gave me something to read to explain what was wrong.",
+            score: "K"
+        },
+        {
+            value: "Used a plastic model to show me what was wrong. ",
+            score: "A"
+        },
+        {
+            value: "Described what was wrong.  ",
+            score: "V"
+        },
+        {
+            value: "Showed me a diagram of what was wrong.  ",
+            score: "R"
+        }
+    ]
+},
+
+
+
+
 ]
 
 
