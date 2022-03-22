@@ -154,27 +154,208 @@ const questions = [
     answers: [
         {
             value: "Gave me something to read to explain what was wrong.",
-            score: "K"
+            score: "R"
         },
         {
             value: "Used a plastic model to show me what was wrong. ",
-            score: "A"
+            score: "K"
         },
         {
             value: "Described what was wrong.  ",
-            score: "V"
+            score: "A"
         },
         {
             value: "Showed me a diagram of what was wrong.  ",
+            score: "V"
+        }
+    ]
+},
+
+{
+    question: `I want to learn to do something new on a computer. I would:`,
+    answers: [
+        {
+            value: "Read the written instructions that came with the program.",
             score: "R"
+        },
+        {
+            value: "Talk with people who know about the program. ",
+            score: "A"
+        },
+        {
+            value: "Start using it and learn by trial and error.  ",
+            score: "K"
+        },
+        {
+            value: "Follow the diagrams in a book.  ",
+            score: "V"
+        }
+    ]
+},
+
+{
+    question: `When learning from the Internet I like:`,
+    answers: [
+        {
+            value: "Videos showing how to do or make things",
+            score: "K"
+        },
+        {
+            value: "Interesting design and visual features. ",
+            score: "V"
+        },
+        {
+            value: "Interesting written descriptions, lists and explanations.",
+            score: "R"
+        },
+        {
+            value: "Audio channels where I can listen to podcasts or interviews.",
+            score: "A"
+        }
+    ]
+},
+
+{
+    question: `I want to learn about a new project. I would ask for:`,
+    answers: [
+        {
+            value: "Diagrams to show the project stages with charts of benefits and costs.",
+            score: "V"
+        },
+        {
+            value: "A written report describing the main features of the project ",
+            score: "R"
+        },
+        {
+            value: "An opportunity to discuss the project",
+            score: "A"
+        },
+        {
+            value: "Examples where the project has been used successfully ",
+            score: "K"
+        }
+    ]
+},
+
+{
+    question: `I want to learn how to take better photos. I would:`,
+    answers: [
+        {
+            value: "Ask questions and talk about the camera and its features. ",
+            score: "A"
+        },
+        {
+            value: "Use the written instructions about what to do. ",
+            score: "R"
+        },
+        {
+            value: "Use diagrams showing the camera and what each part does ",
+            score: "V"
+        },
+        {
+            value: "Use examples of good and poor photos showing how to improve them. ",
+            score: "K"
+        }
+    ]
+},
+
+{
+    question: `I prefer a presenter or a teacher who uses:`,
+    answers: [
+        {
+            value: "Demonstrations, models or practical sessions. ",
+            score: "K"
+        },
+        {
+            value: "Question and answer, talk, group discussion, or guest speakers ",
+            score: "A"
+        },
+        {
+            value: "Handouts, books, or readings. ",
+            score: "R"
+        },
+        {
+            value: "Diagrams, charts, maps or graphs ",
+            score: "V"
         }
     ]
 },
 
 
+{
+    question: `I have finished a competition or test and I would like some feedback. I would like to have feedback`,
+    answers: [
+        {
+            value: "Using examples from what I have done ",
+            score: "K"
+        },
+        {
+            value: "Using a written description of my results. ",
+            score: "R"
+        },
+        {
+            value: "From somebody who talks it through with me.",
+            score: "A"
+        },
+        {
+            value: "Using graphs showing what I achieved.   ",
+            score: "V"
+        }
+    ]
+},
+
+
+{
+    question: `I want to find out about a house or an apartment. Before visiting it I would want:`,
+    answers: [
+        {
+            value: "To view a video of the property. ",
+            score: "K"
+        },
+        {
+            value: "A discussion with the owner ",
+            score: "A"
+        },
+        {
+            value: "A printed description of the rooms and features.",
+            score: "R"
+        },
+        {
+            value: "A plan showing the rooms and a map of the area.",
+            score: "V"
+        }
+    ]
+},
+
+
+{
+    question: `I want to assemble a wooden table that came in parts (kitset). I would learn best from:`,
+    answers: [
+        {
+            value: "Diagrams showing each stage of the assembly. ",
+            score: "V"
+        },
+        {
+            value: "Advice from someone who has done it before. ",
+            score: "A"
+        },
+        {
+            value: "Written instructions that came with the parts for the table.",
+            score: "R"
+        },
+        {
+            value: "Watching a video of a person assembling a similar table.",
+            score: "K"
+        }
+    ]
+}
+
+
+
 
 
 ]
+
 
 
 for(let i=0; i<questions.length; i++){
