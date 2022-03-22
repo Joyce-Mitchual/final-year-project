@@ -1,4 +1,11 @@
 
+//create a global answers object
+const allAnswers = {
+
+};
+
+
+
 //todo all questions to the list
 const questions = [
     {
@@ -357,7 +364,7 @@ const questions = [
 ]
 
 
-
+//Render all questions
 for(let i=0; i<questions.length; i++){
     const question = questions[i];
     const _question = createQuestion(i,question);
@@ -366,7 +373,7 @@ for(let i=0; i<questions.length; i++){
     container.appendChild(_question)
 }
 
-
+//Creates a single question
 function createQuestion(count,data) {
     const container = document.createElement("section");
     const title = document.createElement("p");
@@ -390,6 +397,18 @@ function createQuestion(count,data) {
         label.setAttribute("id","question"+count+"answer"+count)
         input.addEventListener("change", (event)=>{
             console.log(event.target)
+
+            const score = event.target.getAttribute("score");
+            console.log(score)
+            const answer = {
+                score : score,
+                question : data.question,
+                answer : event.target.value
+            }
+           
+            allAnswers[""+(count+1)] = answer;
+
+            console.log(allAnswers)
         })
 
         _main.appendChild(input);
@@ -398,4 +417,62 @@ function createQuestion(count,data) {
     }
 
     return container;
+}
+
+
+//submitting a button
+const button  = document.querySelector("#submit");
+button.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log(allAnswers)
+    
+    const keysCount = Object.keys(allAnswers).length;
+
+    if(keysCount !== questions.length){
+        alert("You have to complete the questionnaire")
+    }else{
+        //computer the score
+        const scores = computeScores(allAnswers);
+        console.log(scores);
+        // save to firebase 
+        const data = {
+            scores : scores,
+            answers : allAnswers
+        };
+
+        // saveToFirebase(data);
+    }
+})
+
+//Go through allAnswers object and count keys
+function computeScores(allAnswers){
+
+    let scores = {
+        A : 0,
+        R : 0,
+        V : 0,
+        K : 0
+    }
+
+    for(let key in allAnswers){
+        const answer = allAnswers[key];
+        scores[answer.score]++;
+    }
+
+    return scores;
+
+}
+
+
+//MOCK FIREBASE SAVE : save data to firestore 
+function saveToFirebase(data){
+    const db = firebase.firestore();
+    const collection = db.collection("answers");
+    collection.add(data)
+    .then(()=>{
+        console.log("data saved")
+    })
+    .catch(()=>{
+        console.log("error")
+    })
 }
