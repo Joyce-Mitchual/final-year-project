@@ -16,7 +16,7 @@
   
   body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #333333;
+    background-color: #201d1d;
   }
   
   a {
@@ -139,174 +139,45 @@
     margin-left: 25px;
   }
 
+#customers {
+    font-family:sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+    margin-top: 45px;
+    background-color:  rgb(59, 59, 58);
+    border-radius: 10px;
+    color: white;
+    margin-bottom: -40px;
 
-  .navbar4 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 70px;
-    background-color: #535353;
-    color: #fff;
-    /* border: 1px solid red; */
-    margin-left: -13px;
-
-}
+  }
   
-
-
-
-
-body {
-    font-family: 'Times New Roman', Times, serif;
-    /* background-color: #333333; */
-}
-
-
-
-
-.rowform {
-    background-color: #333333;
-    height: 490px;
-    /* border: 1px solid #333333; */
-}
-
-.row3:after {
-
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.column3 {
-    /* float: left; */
-    width: 30.33%;
-    padding: 20px;
-    height: 300px;
-    /* Should be removed. Only for demonstration */
-    margin-top: 20px;
-}
-
-#col7 {
-    height: 80px;
-    width: 80%;
-    margin-bottom: 20px;
-    background-color: #666767;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    /* border: 2px solid yellow; */
-}
-
-input[type=text],
-select {
-    width: 25%;
-    padding: 12px 20px;
-    margin: 7px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #535353;
-    color: white;
-}
-
-
-.divform {
-    border-radius: 5px;
-    background-color: #333333;
-    padding: 20px;
-    margin-top: 60px;
-    width: 80%;
-    margin: auto;
-    /* border: 1px solid #3d3d3d; */
-    margin-bottom: -20px;
-}
-
-
-label {
-    color: white;
-    font-size: 19px;
-
-}
-
-/* input, label{
-        display: flex;
-        flex-direction: row;
-
-    }
-   */
-
-   /* .modules{
-    background-color: #3d3d3d;
-    padding: 20px;
-    width: 100%;
-    border: 1px solid  #3d3d3d;
+  #customers td, #customers th {
+    border: 1px solid #ddd; 
+    padding: 18px;
+    border-bottom-right-radius: 5px;
     
-   } */
-
-.button {
-    border: none;
+  }
+  
+  #customers tr:nth-child(even){background-color:rgb(59, 59, 58)}
+  
+  #customers tr:hover {background-color:rgb(49, 49, 47);}
+  
+  #customers th {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    text-align: left;
+    background-color: #420707;
     color: white;
-    padding: 15px 32px;
-    text-align: start;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 17px;
-    margin: auto;
-    cursor: pointer;
-    display: block;
-    width: 83%;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
+  }
 
-.buttontop {
-    background-color: #535353;
-    font-size: 20px;
-    font-weight: 700;
-    
-
-
-}
-
-.button1 {
-    margin-top: -4px;
-    background-color: #333333;
-}
-
-.button2 {
-    margin-top: -4px;
-    background-color: #333333;
-}
-
-.button3 {
-    background-color: #333333;
-    margin-top: -4px;
-
-}
-
-.button4 {
-    background-color: #333333;
-    margin-top: -4px;
-}
-
-.button5 {
-    background-color: #333333;
-    margin-top: -4px;
-}
-
-.button6 {
-    background-color: #333333;
-    margin-top: -4px;
-    margin-bottom: 20px;
-}
-
-footer {
+  footer {
     text-align: center;
     padding: 3px;
     background-color: #4b4b4b;
     color: white;
-    height: 260px;
+    margin-top: 100px;
+    height: 250px;
     bottom: 0;
     width: 100.5%;
     margin-left: -0.5%;
@@ -360,4 +231,3 @@ footer {
     font-family: sans-serif;
     font-size: 12px;
   }
-

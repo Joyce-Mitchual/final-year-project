@@ -15,10 +15,10 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Times New Roman', Times, serif;
-    /* background-color: #333333; */
-}
+/* body {
+    /* font-family: 'Times New Roman', Times, serif; */
+    /* background-color: #333333; 
+} */
 
 a {
     text-decoration: none;
@@ -38,10 +38,40 @@ li {
     padding: 10px;
     background-color: #4b4b4b;
     color: #fff;
+    height: 57px;
 }
+
+
+  
+  #searchbar {
+    width: 190%;
+    height: 40px;
+    margin-left: 120px;
+    font-size: 13px;
+    background-color: #4b4b4b;
+    color: white;
+    border: 1px solid white;
+    margin-top: -20px;
+    border-radius: 0%;
+  
+  }
+  
+  ::placeholder {
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding: 10px;
+  }
 
 .navbar a{
  margin-left: 113px;
+ margin-bottom: -50px;
+ margin-top: 50px;
+ /* border: 1px solid red; */
+}
+
+#navbarMenu{
+    margin-bottom: -20px;  
 }
 
 .nav-links a {
@@ -62,9 +92,10 @@ li {
 }
 
 .menu li:hover {
-    background-color: rgb(218, 53, 53);
+    background-color: rgb(128, 16, 16);
     border-radius: 1px;
     transition: 0.3s ease;
+    
 }
 
 .menu li:active {
@@ -111,15 +142,16 @@ li {
     height: 45px;
     background-color: rgb(97, 96, 97);
     color: #fff;
-    /* border: 1px solid red; */
+    
 }
+
 
 .headingtwo{
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     margin-top: 10px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:sans-serif;
     font-weight: 100;
 }
 
@@ -173,6 +205,41 @@ li {
     /* border: 2px solid yellow; */
 }
 
+#col8{
+    height: 129px;
+    width: 80%;
+    margin-bottom: 20px;
+    background-color: #666767;
+    margin: auto;
+    margin-top: 40px;
+    
+    /* border: 2px solid yellow; */
+}
+
+#col9 {
+    height: 125px;
+    width: 80%;
+    margin-bottom: 20px;
+    background-color: #666767;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* border: 2px solid yellow; */
+}
+
+.buttombutton {
+    width: 20%;
+    background-color: rgb(128, 16, 16);
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 15.5px;
+    margin-top: 10px;
+   text-align: center;
+   }
+
 input[type=text],
 select {
     width: 25%;
@@ -217,7 +284,7 @@ label {
     padding: 20px;
     width: 100%;
     border: 1px solid  #3d3d3d;
-    
+    font-family: sans-serif;
    }
 
 .button {
@@ -234,6 +301,7 @@ label {
     width: 83%;
     margin-top: 20px;
     margin-bottom: 10px;
+    font-family: sans-serif;
 }
 
 .buttontop {
@@ -248,33 +316,40 @@ label {
 .button1 {
     margin-top: -4px;
     background-color: #333333;
+    font-family: sans-serif;
 }
 
 .button2 {
     margin-top: -4px;
     background-color: #333333;
+    font-family: sans-serif;
 }
 
 .button3 {
     background-color: #333333;
     margin-top: -4px;
+    font-family: sans-serif;
+    
 
 }
 
 .button4 {
     background-color: #333333;
     margin-top: -4px;
+    font-family: sans-serif;
 }
 
 .button5 {
     background-color: #333333;
     margin-top: -4px;
+    font-family: sans-serif;
 }
 
 .button6 {
     background-color: #333333;
     margin-top: -4px;
     margin-bottom: 20px;
+    font-family: sans-serif;
 }
 
 footer {
@@ -283,10 +358,59 @@ footer {
     background-color: #4b4b4b;
     color: white;
     /* margin-top: 100px; */
-    height: 190px;
+    height: 250px;
     bottom: 0;
     width: 100.5%;
     margin-left: -0.5%;
    
   }
 
+
+  
+  
+  .footerSectionOne {
+    width: 90%;
+    height: 70px;
+    /* border: 1px solid red; */
+    margin-top: 25px;
+    margin: auto;
+    text-align: left;
+    font-family: sans-serif;
+    margin-bottom: 8px;
+    margin-top: 25px;
+  }
+  
+  .hrFooter {
+    width: 90%;
+    border-width: 0.1px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  
+  .table {
+    margin: auto;
+    text-align: left;
+    width: 90%;
+    margin-top: -10px;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+  
+  ul#horizontal-list {
+    min-width: 90%;
+    list-style: none;
+    padding-top: 20px;
+  }
+  
+  ul#horizontal-list li {
+    display: inline;
+    text-decoration: underline;
+  
+  }
+  
+  .footerSectionTwo {
+    text-align: center;
+    margin-top: 25px;
+    font-family: sans-serif;
+    font-size: 12px;
+  }
