@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dashboard/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Dashboard</title>
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
+    <script src="../scripts/firebase.js"></script>
+    <script src="../scripts/sentinel.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <!-- Navbars -->
+        <div>
+            <!-- First navbar -->
+            <nav class="navbar1">
+                <div>
+                    <div class="logo">Student Portal</div>
+                </div>
+            </nav>
+
+            <!-- Second Navbar -->
+            <nav class="navbar">
+                <div class="menu">
+                    <li><a href="#0">My Area</a></li>
+                    <li class="services">
+                        <a href="#0">Services</a>
+                    </li>
+                    <li><a href="#0">Tools</a></li>
+                    <li><a href="#0" id="logOutBtn">LogOut</a></li>
+
+                    <div class="navright">
+                        <form>
+                            <span>
+                                <input type="text" id="searchbar" placeholder="Search..." name="search" style="color: white;">
+                                <!-- <span> <button type="submit"><i class="fa fa-search"></i></button> -->
+                            </span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Third Navbar -->
+            <nav class="navbar3">
+                <div>
+                    <div class="menu">
+                        <li><a href="./">Dashboard</a></li>
+                        <li><a href="../module/">Modules</a></li>
+                        <li class="services">
+                            <a href="#0">Library</a>
+                        </li>
+                        <li><a href="#0">Profile</a></li>
+                        <li><a href="#0">Preferences</a></li>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- BLOCKS AT THE BODY SECTION -->
+
+        <div>
+
+            <!-- Email Preview -->
+            <div class="row">
+                <div class="column" id="col1">
+                    <h2>Email Preview</h2>
+                    <hr class="hr1"><br>
+                    <div class="studentlinkstext">
+                        <p style="font-style: italic;">| &nbsp;&nbsp; You have 144 emails unread</p><br><br>
+                        <!-- <hr class="hr1"><br><br> -->
+                        <p class="date" style="margin-top: -16px;">25/03/2022</p>
+                        <hr class="hr11">
+                        <a href="../dashboard/dashboard.html">
+                            <p><span style="color: red;">|</span> &nbsp;&nbsp;You have submitted your assignment submission for Basic
+                                &nbsp;&nbsp;&nbsp;&nbsp;Auctioning Systems</p>
+                        </a>
+
+                        <hr class="hr11">
+                        <p class="date" style="margin-top: 9px;margin-bottom: -10px;">23/03/2022</p>
+                        <a href="../dashboard/dashboard.html">
+                            <p><span style="color: red;">|</span> &nbsp;&nbsp;You have submitted your assignment submission for Basic
+                                &nbsp;&nbsp;&nbsp;&nbsp;Auctioning Systems</p>
+                        </a>
+
+                        <hr class="hr11">
+                        <p class="date" style="margin-top: 9px;margin-bottom: -10px;">22/03/2022</p>
+                        <a href="../dashboard/dashboard.html">
+                            <p><span style="color: red;">|</span> &nbsp;&nbsp;You have submitted your assignment submission for Basic
+                                &nbsp;&nbsp;&nbsp;&nbsp;Auctioning Systems</p>
+                        </a>
+                        <hr class="hr11"><br>
+                        <p class="studentlinks">First&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Prev &nbsp;|&nbsp;&nbsp;&nbsp;1 of
+                            2&nbsp;&nbsp;|&nbsp;&nbsp;Next&nbsp;&nbsp;|&nbsp;&nbsp;Last</p>
+
+                        <!-- Button for student links -->
+                        <div>
+                            <button class="button button2">View Web Mail</button>
+                        </div>
+                        <div>
+                            <button class="button button2">Go To Office 365</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Student Links -->
+                <div class="column" id="col2">
+                    <h2>Student Links</h2>
+                    <hr class="hr2"><br>
+                    <div class="studentlinkstext">
+                        <p>Registration centre</p>
+                        <hr class="hr22"><br>
+                        <p>Address Details</p>
+                        <hr class="hr22"><br>
+
+                        <p>Course Module Enrolment(Part II)</p>
+                        <hr class="hr22"><br>
+
+                        <p>Interactive Transcript</p>
+                        <hr class="hr22"><br>
+                        <p>Marks Calculator</p>
+                        <hr class="hr22"><br>
+
+                        <p class="studentlinks">First&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Prev &nbsp;|&nbsp;&nbsp;&nbsp;1 of
+                            2&nbsp;&nbsp;|&nbsp;&nbsp;Next&nbsp;&nbsp;|&nbsp;&nbsp;Last</p>
+
+                        <!-- Button for student links -->
+                        <div>
+                            <button class="button button2">View More Items</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Library -->
+                <div class="column" id="col3">
+                    <h2>Library</h2>
+                    <hr class="hr3"><br>
+                    <p class="studentlinkstext" style="font-style: italic;">| &nbsp;&nbsp; No items found</p>
+                    <div>
+                        <button class="button button1">View Library Record</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Contacts -->
+            <div class="row2">
+                <div class="column2" id="col4">
+                    <h2>Contacts</h2>
+                    <hr class="hr4"><br>
+                    <div class="studentlinkstext">
+                        <p style="text-decoration: dotted;">Keivan Navie</p>
+                        <img src='../images/keivan.jpg' class="imageOne" style='float: right; width: 44px; height: 49px;border-radius: 50%;' />
+                        <p>Director of Teaching, Computer Science (Ghana)</p>
+                    </div>
+
+                    <hr class="hr44"><br>
+                    <div class="studentlinkstext">
+                        <p style="text-decoration: dotted;">Phillip Benachour</p>
+                        <img src='../images/philip.jpg' class="imageOne" style='float: right; width: 42px; height: 49px;border-radius: 50%;' />
+                        <p>Director of Studies, Computer Science (Ghana)</p>
+                    </div>
+                    <hr class="hr44"><br>
+
+                    <div class="studentlinkstext">
+                        <p>Antonios Gouglidis</p>
+                        <img src='../images/Antonios.jpg' class="imageOne" style='float: right; width: 42px; height: 49px;border-radius: 50%;' />
+                        <p>Course Convenor, GHSCC.363</p>
+                    </div>
+                    <hr class="hr44"><br>
+
+                    <div class="studentlinkstext">
+                        <p>Barry Porter</p>
+                        <img src='../images/barry.jpg' class="imageOne" style='float: right; width: 45px; height: 49px;border-radius: 50%;' />
+                        <p>Course Convenor, GHSCC.311</p>
+                    </div>
+                    <hr class="hr44"><br>
+
+                    <div class="studentlinkstext">
+                        <p>Frederick Heer-Menlah</p>
+                        <img src='../images/unknown.jpg' class="imageOne" style='float: right; width: 44px; height: 48px;border-radius: 50%;' />
+                        <p>Partner Course Convenor, GHSCC.300</p>
+                    </div>
+                    <hr class="hr44"><br>
+
+                    <p class="studentlinks" id="studentlinkstext">First&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Prev
+                        &nbsp;|&nbsp;&nbsp;&nbsp;1 of
+                        2&nbsp;&nbsp;|&nbsp;&nbsp;Next&nbsp;&nbsp;|&nbsp;&nbsp;Last</p>
+
+                </div>
+
+                <!-- Student-only Spaces-->
+                <div class="column2" id="col5">
+                    <h2>Student-only Spaces</h2>
+                    <hr class="hr5"><br>
+                    <p class="studentlinkstext" style="font-style: italic;">| &nbsp;&nbsp; No items found</p>
+                </div>
+
+                <!-- Add Widget -->
+                <div class="column2" id="col6">
+                    <div id="col66">
+                        <br>
+                        <h2 style="margin-left: 16px; font-size: 22px; ">Add Widget</h2><br>
+                        <hr class="hr66"><br>
+                        <hr class="hr66"><br>
+                        <hr class="hr66"><br>
+                        <hr class="hr66"><br>
+                        <hr class="hr66"><br>
+                        <hr class="hr66"><br>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="row3">
+                    <div class="column3" id="col7">
+                        <p>You may also re-order your widgets via the 'Dashboard Preferences'.</p>
+                        <div>
+                            <button class="button button3 ">Dashboard Preferences</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <footer>
+                    <div class="footerSectionOne">
+                        <h3>Contact</h3><br>
+                        <h4>Get IT help and Support</h4>
+
+                    </div>
+                    <div>
+                        <hr class="hrFooter">
+                    </div>
+
+                    <div class="table">
+                        <ul id="horizontal-list">
+                            <li>Accessibility Statement</li>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <li>Legal Notice</li>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <li>Freedom of Information</li>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <li>Privacy and Cookie Notice</li>
+                        </ul>
+                        <br>
+                        <br>
+
+
+                        <div class="footerSectionTwo">
+                            © Copyright Learning Management System 2022
+                        </div>
+                    </div>
+
+
+
+
+                </footer>
+            </div>
+
+        </div>
+
+
+
+</body>
+
+</html>

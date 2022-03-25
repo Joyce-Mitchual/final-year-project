@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="./assets/css/log-screen.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
+    <script src="./scripts/firebase.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <div class="boxheader">
+            <h2>Web Login</h1>
+        </div>
+
+        <div class="box">
+            <div class="leftside">
+                <form role="form" id="loginForm">
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="inputfield">
+                            <input name="email" id="email" type="email" spellcheck="false" required />
+                        </div>
+                        <div class="label">
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="inputfield">
+                            <input name="password" id="password" type="password" autocapitalize=off autocomplete=off spellcheck="false" required />
+                        </div>
+                    </div>
+                    <div class="centerMan">
+                        <div id="errorDiv"></div>
+                    </div>
+                    <div class="submit">
+                        <button id="logSubmitBtn" type="submit">Next</button> <span id="loadingGIF"></span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="rightside">
+                <!-- <p class="textOne">Please enter your username
+                    and click the "Next" button to continue.</p> -->
+                <!-- <p class="textTwo">By using this service you agree to adhere to our
+                    <a class="textTwo" href="http://www.lancs.ac.uk/iss/governance/">policies and guidelines.</a></p> -->
+            </div>
+        </div>
+
+        <div class="problem">
+            <p id="links" style="font-size:95%">
+                <a href="">Forgotten your password?</a><br>
+                <a href="">Problem using Multi-Factor Authentication
+                    (MFA)?</a><br>
+                <a href="">Problems logging in?</a>
+            </p>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./scripts/door-keeper.js"></script>
+
+</body>
+
+</html>

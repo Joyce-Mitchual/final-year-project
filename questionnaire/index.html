@@ -8,13 +8,23 @@
     <title>Questionnaire</title>
     <link rel="stylesheet" href="../questionnaire/questionnaire.css">
     <script src="./questionnaire.js" defer></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
+    <script src="../scripts/firebase.js"></script>
+    <script src="../scripts/sentinel.js"></script>
+
 </head>
 
 <body>
     <div class="quest">
 
         <div class="logo">
-        
+
         </div>
 
         <p class="heading">The VARK Questionnaire</p>
@@ -28,7 +38,7 @@
 
             <label for="lname">Last Name</label>
             <input type="text" id="lname" name="lastname" placeholder="Your last name.."> -->
-<!-- 
+            <!-- 
 
             <p>1. I need to find the way to a shop that a friend has recommended. I would: </p>
             <input type="radio" id="html" name="fav_language" value="HTML">
@@ -119,26 +129,26 @@
             <input type="radio" id="javascript" name="fav_language" value="JavaScript">
             <label for="javascript">Showed me a diagram of what was wrong.  </label><br> -->
 
-            
 
 
 
 
-        <!-- <label for="country">Q1.I need to find the way to a shop that a friend has recommended. I would:</label>
+
+            <!-- <label for="country">Q1.I need to find the way to a shop that a friend has recommended. I would:</label>
             <select id="country" name="country">
                 <option value="australia">a. find out where the shop is in relation to somewhere I know.
                 </option>
                 <option value="canada">Canada</option>
                 <option value="usa">USA</option>
             </select> -->
-           
+
         </form>
 
-        <div class="submitb"> 
+        <div class="submitb">
             <a>
                 <button id="submit" class="button button1">Submit</button>
             </a>
-            
+
         </div>
     </div>
 </body>
