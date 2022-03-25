@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module-pages</title>
+  <link rel="stylesheet" href="../module/module.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
+  <script src="../scripts/firebase.js"></script>
+  <script src="../scripts/sentinel.js"></script>
+
+</head>
+
+<body>
+
+  <div>
+    <!-- First navbar -->
+    <nav class="navbar1">
+      <div>
+        <div class="logo">Student Portal</div>
+      </div>
+    </nav>
+
+    <!-- Second Navbar -->
+    <nav class="navbar">
+      <div class="menu" id="navbarMenu">
+        <li><a href="#0">My Area</a></li>
+        <li class="services">
+          <a href="#0">Services</a>
+        </li>
+        <li><a href="#0">Tools</a></li>
+        <li><a href="#0" id="logOutBtn">LogOut</a></li>
+
+        <div class="navright">
+          <form>
+            <span>
+              <input type="text" id="searchbar" placeholder="Search..." name="search" style="color: white;">
+              <!-- <span> <button type="submit"><i class="fa fa-search"></i></button> -->
+            </span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Third Navbar -->
+    <nav class="navbar3">
+      <div>
+        <div class="menu">
+          <li><a href="../dashboard/">Dashboard</a></li>
+          <li><a href="../module/">Modules</a></li>
+          <li class="services">
+            <a href="#0">Library</a>
+          </li>
+          <!-- <li><a href="/">Profile</a></li>
+                    <li><a href="/">Preferences</a></li> -->
+        </div>
+      </div>
+    </nav>
+    <nav class="navbar4">
+      <div>
+        <div class="logo">MODULES</div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="rowform">
+    <div class="one">
+      <div class="row3">
+        <div class="column3" id="col7">
+          <h2 class="headingtwo">If you are missing any modules then make sure that the Period is set to All Modules!</h2>
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divform">
+      <form>
+        <label for="Year">Year</label>
+        <select id="country" name="country">
+          <option value="australia">21/22</option>
+          <option value="canada">18/19</option>
+          <option value="usa">20/21</option>
+          <option value="usa">21/22</option>
+        </select>
+
+
+        <label for="Learning Space">Learning Space</label>
+        <select id="country" name="country">
+          <option value="australia">Moodle</option>
+          <option value="canada">All Modules</option>
+          <option value="usa">Moodle</option>
+          <option value="usa">No learning space</option>
+        </select>
+
+
+        <label for="Period">Period</label>
+        <select id="country" name="country">
+          <option value="australia">All Modules</option>
+          <option value="canada">Current Modules</option>
+          <option value="usa">Past Modules</option>
+          <option value="usa">Future Modules</option>
+        </select>
+      </form>
+    </div>
+
+  </div>
+
+
+
+  <div class="modules">
+
+    <button class="button buttontop">Your Course Modules For 21/22</button>
+    <a href="../questionnaire/"> <button class="button button1">GHSCC.100:Java Programming</button> </a>
+    <a href="../questionnaire/"><button class="button button2">GHSCC.101:C Programming</button></a>
+    <a href="../questionnaire/"><button class="button button3">GHSCC.102:Python Programming</button></a>
+    <a href="../questionnaire/"><button class="button button4">GHSCC.103:Erlang Programming</button></a>
+    <a href="../questionnaire/"><button class="button button5">GHSCC.104:Javascript Programming</button></a>
+    <a href="../questionnaire/"><button class="button button6">GHSCC.105:PHP Programming</button></a>
+
+  </div>
+
+  <div class="rowform">
+    <div class="one">
+      <div class="row3">
+        <div class="column3" id="col8">
+          <h2 class="headingtwo">Last Updated</h2>
+          <h2 class="headingtwo">Learning Spaces data last checked at 16:50, 23 Mar 2022</h2>
+          <h2 class="headingtwo">Student Records data last checked at 16:50, 23 Mar 2022</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="rowform">
+      <div class="one">
+        <div class="row3">
+          <div class="column3" id="col9">
+            <h2 class="headingtwo">You may also re-order your widgets via the 'Dashboard Preferences'.</h2>
+            <div class="headingtwo">
+              <button class="buttombutton ">Module Preferences</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <footer>
+          <div class="footerSectionOne">
+            <h3>Contact</h3><br>
+            <h4>Get IT help and Support</h4>
+
+          </div>
+          <div>
+            <hr class="hrFooter">
+          </div>
+
+          <div class="table">
+            <ul id="horizontal-list">
+              <li>Accessibility Statement</li>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+              <li>Legal Notice</li>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+              <li>Freedom of Information</li>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+              <li>Privacy and Cookie Notice</li>
+            </ul>
+            <br>
+            <br>
+
+
+            <div class="footerSectionTwo">
+              © Copyright Learning Management System 2022
+            </div>
+          </div>
+
+
+
+
+        </footer>
+      </div>
+
+
+
+
+
+</body>
+
+</html>
