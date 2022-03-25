@@ -12,12 +12,13 @@
     margin: auto;
     width: 50%;
     color: white;
+    margin-top: -22px;
     
 }
 
 .paragraph{
     padding: 19px;
-    margin-bottom: -20px; 
+    margin-bottom: -24px; 
     font-size: 14px; 
 
 }
