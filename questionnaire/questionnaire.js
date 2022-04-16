@@ -2,6 +2,55 @@
 //create a global answers object
 const allAnswers = {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 };
 
 const keyMaps = {
