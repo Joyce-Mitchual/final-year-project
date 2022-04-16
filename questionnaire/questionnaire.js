@@ -1,12 +1,13 @@
 //
-
+var db;
+var firebase;
 window.addEventListener('load', function () {
-  var firebase = app_fireBase;
+  firebase = app_fireBase;
   firebase.auth().onAuthStateChanged((user) => {
     // console.log(user);
 
     if (user) {
-      var db = firebase.firestore();
+      db = firebase.firestore();
 
 
       firebase
@@ -28,23 +29,25 @@ window.addEventListener('load', function () {
           console.log('Current data: ', doc.data());
 
           const user_data = doc.data();
-          if (user_data?.questionnaireState) {
-            const maxKey = pickTheLearningStyle(user_data.results.scores);
+          // if (user_data?.questionnaireState) {
+            // const maxKey = pickTheLearningStyle(user_data.results.scores);
 
-            if (maxKey === 'K')
-              window.location.href = '../Kinesthetic/index.html';
-            if (maxKey === 'A') window.location.href = '../Aural/index.html';
-            if (maxKey === 'V') window.location.href = '../Visual/index.html';
-            if (maxKey === 'R') window.location.href = '../Read/index.html';
-          }else{
+            // if (maxKey === 'K')
+            //   window.location.href = '../Kinesthetic/index.html';
+            // if (maxKey === 'A') window.location.href = '../Aural/index.html';
+            // if (maxKey === 'V') window.location.href = '../Visual/index.html';
+            // if (maxKey === 'R') window.location.href = '../Read/index.html';
+          // }else{
             
             const questionsFrame = document.querySelector(".quest");
             questionsFrame.style.display = 'block';
 
             const pageLoader = document.querySelector("#page-loader");
             pageLoader.style.display = 'none';
-            run(db, user);
-          }
+
+            //run loading questions
+            run();
+          // }
         });
     } else {
       window.sessionStorage.clear();
@@ -53,15 +56,8 @@ window.addEventListener('load', function () {
     }
   });
 
-  function run(db, user) {
+  function run() {
     const allAnswers = {};
-
-    const keyMaps = {
-      A: 'Aural',
-      K: 'Kinesthetic',
-      V: 'Visual',
-      R: 'Read or Write',
-    };
 
     //Render all questions
     for (let i = 0; i < questions.length; i++) {
@@ -131,23 +127,15 @@ window.addEventListener('load', function () {
       } else {
         //computer the score
         const scores = computeScores(allAnswers);
-        // console.log(scores);
+
         // save to firebase
         const data = {
           scores: scores,
           answers: allAnswers,
         };
 
-        // const maxKey = pickTheLearningStyle(scores);
         //save data to firebase
         saveToFirebase(data);
-
-        // if (res) {
-        // if (maxKey === "K") window.location.href = "../Kinesthetic/index.html";
-        // if (maxKey === "A") window.location.href = "../Aural/index.html";
-        // if (maxKey === "V") window.location.href = "../Visual/index.html";
-        // if (maxKey === "R") window.location.href = "../Read/index.html";
-        // }
       }
     });
   }
@@ -185,7 +173,6 @@ window.addEventListener('load', function () {
 
   //MOCK FIREBASE SAVE : save data to firestore
   function saveToFirebase(data) {
-    console.log('Saving to FB', data, user.uid);
 
     const maxKey = pickTheLearningStyle(data.scores);
 
@@ -223,10 +210,8 @@ window.addEventListener('load', function () {
           'Your Results has been uploaded successfully. Click to proceed to the content page.';
 
         button.addEventListener('click', (event) => {
-          console.log('Redirect clicked');
 
-          if (maxKey === 'K')
-            window.location.href = '../Kinesthetic/index.html';
+          if (maxKey === 'K') window.location.href = '../Kinesthetic/index.html';
           if (maxKey === 'A') window.location.href = '../Aural/index.html';
           if (maxKey === 'V') window.location.href = '../Visual/index.html';
           if (maxKey === 'R') window.location.href = '../Read/index.html';
@@ -236,6 +221,13 @@ window.addEventListener('load', function () {
 });
 
 //todo all questions to the list
+var keyMaps = {
+  A: 'Aural',
+  K: 'Kinesthetic',
+  V: 'Visual',
+  R: 'Read or Write',
+};
+
 var questions = [
   {
     question:
