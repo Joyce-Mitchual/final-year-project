@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire</title>
     <link rel="stylesheet" href="../questionnaire/questionnaire.css">
-    <script src="./questionnaire.js" defer></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
@@ -15,13 +14,18 @@
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
+
+    <!-- <script src="../scripts/door-keeper.js"></script> -->
     <script src="../scripts/firebase.js"></script>
     <script src="../scripts/sentinel.js"></script>
+
+    <script src="./questionnaire.js" defer></script>
+
 
 </head>
 
 <body>
-    <div class="quest">
+    <div style="display:none" class="quest">
 
         <div class="logo">
 
@@ -151,6 +155,19 @@
 
         </div>
     </div>
+
+    <section id="overlay">
+
+        <div id="state-loader" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+        <h3 class="heading">Uploading Results</h3>
+        <p class="subheading">You are a visual learner, you will be redirected to your learning page soon</p>
+
+        <button style="display: none" class="redirect-user">Go to Page</button>
+    </section>
+
+    <div id="page-loader" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
 </body>
 
 </html>
