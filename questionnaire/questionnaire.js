@@ -185,7 +185,7 @@ window.addEventListener('load', function () {
     subheading.innerHTML =
       'You are a ' +
       keyMaps[maxKey] +
-      ' learner. You can go to the content page after yourt results is uploaded.';
+      ' learner. You can go to the content page after your result is uploaded.';
 
     const ref = db.collection('students').doc(firebase.auth().currentUser.uid);
     ref
@@ -207,7 +207,7 @@ window.addEventListener('load', function () {
         //change the heading text
         const heading = document.querySelector('.heading');
         heading.innerHTML =
-          'Your Results has been uploaded successfully. Click to proceed to the content page.';
+          'Your Results have been uploaded successfully. Click to proceed to the content page.';
 
         button.addEventListener('click', (event) => {
 
