@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Questionnaire</title>
-    <link rel="stylesheet" href="../questionnaire/questionnaire.css">
+    <link rel="stylesheet" href="../questionnaire/questionnaire.css" />
 
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
@@ -20,29 +19,26 @@
     <script src="../scripts/sentinel.js"></script>
 
     <script src="./questionnaire.js" defer></script>
+  </head>
 
+  <body>
+    <div style="display: none" class="quest">
+      <div class="logo"></div>
 
-</head>
+      <p class="head">The VARK Questionnaire</p>
 
-<body>
-    <div style="display:none" class="quest">
-
-        <div class="logo">
-
-        </div>
-
-        <p class="head">The VARK Questionnaire</p>
-
-        <h3 class="paragraph">Choose the answer which best explains your preference and select it.
-            Please pick an answer that matches your perception and Please Do well to Answer All Questions.
-        </h3>
-        <form action="" id="questions-forms">
-            <!-- <label for="fname">First Name</label>
+      <h3 class="paragraph">
+        Choose the answer which best explains your preference and select it.
+        Please pick an answer that matches your perception and Please Do well to
+        Answer All Questions.
+      </h3>
+      <form action="" id="questions-forms">
+        <!-- <label for="fname">First Name</label>
             <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
 
             <label for="lname">Last Name</label>
             <input type="text" id="lname" name="lastname" placeholder="Your last name.."> -->
-            <!-- 
+        <!-- 
 
             <p>1. I need to find the way to a shop that a friend has recommended. I would: </p>
             <input type="radio" id="html" name="fav_language" value="HTML">
@@ -133,41 +129,57 @@
             <input type="radio" id="javascript" name="fav_language" value="JavaScript">
             <label for="javascript">Showed me a diagram of what was wrong.  </label><br> -->
 
-
-
-
-
-
-            <!-- <label for="country">Q1.I need to find the way to a shop that a friend has recommended. I would:</label>
+        <!-- <label for="country">Q1.I need to find the way to a shop that a friend has recommended. I would:</label>
             <select id="country" name="country">
                 <option value="australia">a. find out where the shop is in relation to somewhere I know.
                 </option>
                 <option value="canada">Canada</option>
                 <option value="usa">USA</option>
             </select> -->
+      </form>
 
-        </form>
-
-        <div class="submitb">
-            <a>
-                <button id="submit" class="button button1">Submit</button>
-            </a>
-
-        </div>
+      <div class="submitb">
+        <a>
+          <button id="submit" class="button button1">Submit</button>
+        </a>
+      </div>
     </div>
 
     <section id="overlay">
+      <section class="completed-test" style="display:none">
+        <div id="state-loader" class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
 
-        <div id="state-loader" class="lds-ring"><div></div><div></div><div></div><div></div></div>
-
-        <h3 class="heading">Uploading Results</h3>
-        <p class="subheading">You are a visual learner, you will be redirected to your learning page soon</p>
+        <h3 class="heading" >Uploading Results</h3>
+        <p class="subheading">
+          You are a visual learner, you will be redirected to your learning page
+          soon
+        </p>
 
         <button style="display: none" class="redirect-user">Go to Page</button>
+      </section>
+
+      <section class="prompt-test" style="display: none"> 
+
+        <h3 class="heading">Hey 👋🏾, You have taken the test already</h3>
+        <p class="subheading">
+         You can takke the test multiple times and update your learning style
+        </p>
+
+        <button  class="test-again">Take Test Again</button>
+        <button  class="redirect">Go to My learning style</button>
+      </section>
     </section>
 
-    <div id="page-loader" class="lds-ring"><div></div><div></div><div></div><div></div></div>
-
-</body>
-
+    <div id="page-loader" class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
 </html>

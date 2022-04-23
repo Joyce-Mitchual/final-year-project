@@ -88,7 +88,7 @@ body {
   align-items: center;
   flex-direction: column;
 }
-
+ 
 #overlay {
   position: fixed;
   display:none;

@@ -1,6 +1,7 @@
 //
 var db;
 var firebase;
+var user_data;
 window.addEventListener('load', function () {
   firebase = app_fireBase;
   firebase.auth().onAuthStateChanged((user) => {
@@ -28,7 +29,16 @@ window.addEventListener('load', function () {
         .onSnapshot((doc) => {
           console.log('Current data: ', doc.data());
 
-          const user_data = doc.data();
+          user_data = doc.data();
+          if(user_data.questionnaireState){
+            handleTestAgain();
+            console.log("Taken old test")
+
+          }else{
+            console.log("Taken new test")
+            
+
+          }
           // if (user_data?.questionnaireState) {
             // const maxKey = pickTheLearningStyle(user_data.results.scores);
 
@@ -44,7 +54,6 @@ window.addEventListener('load', function () {
 
             const pageLoader = document.querySelector("#page-loader");
             pageLoader.style.display = 'none';
-
             //run loading questions
             run();
           // }
@@ -173,11 +182,20 @@ window.addEventListener('load', function () {
 
   //MOCK FIREBASE SAVE : save data to firestore
   function saveToFirebase(data) {
-
+    hideoverlayFrame()
     const maxKey = pickTheLearningStyle(data.scores);
 
     const overlay = document.querySelector('#overlay');
     overlay.style.display = 'flex';
+
+    const completeFrame = document.querySelector('.completed-test');
+    completeFrame.style.display = 'block';
+
+    const promptFrame = document.querySelector('section.prompt-test');
+    console.log(promptFrame);
+    promptFrame.style.display = 'none';
+
+
 
     const button = document.querySelector('.redirect-user');
 
@@ -204,10 +222,12 @@ window.addEventListener('load', function () {
         const spinner = document.querySelector('#state-loader');
         spinner.style.display = 'none';
 
+
+
         //change the heading text
         const heading = document.querySelector('.heading');
         heading.innerHTML =
-          'Your Results have been uploaded successfully. Click to proceed to the content page.';
+          'Your Results have been uploaded successfully.<br> Click to proceed to the content page.';
 
         button.addEventListener('click', (event) => {
 
@@ -218,6 +238,56 @@ window.addEventListener('load', function () {
         });
       });
   }
+
+
+  function handleTestAgain(){
+    const overlayframe = document.querySelector('#overlay');
+    overlayframe.style.display = 'flex';
+
+    const testTakenFrame = document.querySelector('.prompt-test');
+    testTakenFrame.style.display = 'block';
+    const maxKey = pickTheLearningStyle(user_data.results.scores);
+
+    const subheading = document.querySelector('.prompt-test .subheading');
+    subheading.innerHTML = 'You are a ' +
+    keyMaps[maxKey] +
+    ' learner. You can go to the content page after your result is uploaded.';
+
+
+    const button1 = document.querySelector('.test-again');
+    button1.addEventListener('click', (event) => {
+      hideoverlayFrame();
+  
+    });
+
+
+    const button2 = document.querySelector('.redirect');
+    button2.addEventListener('click', (event) => {
+     
+       if (user_data?.questionnaireState) {
+            // const maxKey = pickTheLearningStyle(user_data.results.scores);
+
+            if (maxKey === 'K'){
+              window.location.href = '../Kinesthetic/index.html';
+            if (maxKey === 'A') window.location.href = '../Aural/index.html';
+            if (maxKey === 'V') window.location.href = '../Visual/index.html';
+            if (maxKey === 'R') window.location.href = '../Read/index.html';
+          }  
+       }
+    });
+
+  }
+
+  function showoverlayFrame(){}
+
+  function hideoverlayFrame(){
+    const overlayframe = document.querySelector('#overlay');
+    overlayframe.style.display = 'none';
+
+    const promptFrame = document.querySelector('.prompt-test');
+    promptFrame.style.display = 'none';
+  }
+
 });
 
 //todo all questions to the list
@@ -586,3 +656,4 @@ lists and words describing what to do and some diagrams. I would learn most from
     ],
   },
 ];
+
