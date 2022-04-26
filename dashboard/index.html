@@ -39,13 +39,57 @@
                         <a href="#0">Services</a>
                     </li>
                     <li><a href="#0">Tools</a></li>
-                    <li><a href="#0">Upload-Resources</a></li>
+                    <li><a href="#0" id="learningStyle">Learning Style</a></li>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            Upload Resources
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <div class="divform">
+                                <form>
+                                    <p style="margin-top: -9px; margin-bottom: 30px">
+                                        UPLOAD RESOURCES
+                                    </p>
+                                    <div class="boxx">
+                                        <p style="margin-bottom: 2px; margin-top: -3px">
+                                            SELECT PAGE YOU WANT TO UPLOAD THE RESOURCES TO:
+                                        </p>
+                                        <select id="country" name="country">
+                                            <option value="australia">Visual Page</option>
+                                            <option value="canada">Aural Page</option>
+                                            <option value="usa">Read/Write Page</option>
+                                            <option value="usa">Kinesthetic Page</option>
+                                        </select>
+                                    </div>
+                                </form>
+                                <br />
+                                <br />
+
+                                <div>
+                                    <form id="fileUploadForm" enctype="multipart/form-data">
+                                        <div class="boxx">
+                                            <p>CHOOSE FILE TO UPLOAD:</p>
+                                            <input type="file" class="buttonn" id="fileToUpload" name="fileToUpload" />
+                                        </div>
+                                        <div class="centerMan">
+                                            <div id="fileUploadErrorDiv"></div>
+                                        </div>
+                                        <div>
+                                            <button id="fileUploadButton">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <li><a href="#0" id="logOutBtn">LogOut</a></li>
 
                     <div class="navright">
                         <form>
                             <span>
-                                <input type="text" id="searchbar" placeholder="Search..." name="search" style="color: white;">
+                                <input type="text" id="searchbar" placeholder="Search..." name="search"
+                                    style="color: white;">
                                 <!-- <span> <button type="submit"><i class="fa fa-search"></i></button> -->
                             </span>
                     </div>
@@ -83,25 +127,29 @@
                         <p class="date" style="margin-top: -16px;">25/03/2022</p>
                         <hr class="hr11">
                         <a href="../dashboard/dashboard.html">
-                            <p><span style="color: red;">|</span> &nbsp;&nbsp;You have submitted your assignment submission for Basic
+                            <p><span style="color: red;">|</span> &nbsp;&nbsp;You have submitted your assignment
+                                submission for Basic
                                 &nbsp;&nbsp;&nbsp;&nbsp;Auctioning Systems</p>
                         </a>
 
                         <hr class="hr11">
                         <p class="date" style="margin-top: 9px;margin-bottom: -10px;">23/03/2022</p>
                         <a href="../dashboard/dashboard.html">
-                            <p><span style="color: red;">|</span> &nbsp;&nbsp;You have submitted your assignment submission for Basic
+                            <p><span style="color: red;">|</span> &nbsp;&nbsp;You have submitted your assignment
+                                submission for Basic
                                 &nbsp;&nbsp;&nbsp;&nbsp;Auctioning Systems</p>
                         </a>
 
                         <hr class="hr11">
                         <p class="date" style="margin-top: 9px;margin-bottom: -10px;">22/03/2022</p>
                         <a href="../dashboard/dashboard.html">
-                            <p><span style="color: red;">|</span> &nbsp;&nbsp;You have submitted your assignment submission for Basic
+                            <p><span style="color: red;">|</span> &nbsp;&nbsp;You have submitted your assignment
+                                submission for Basic
                                 &nbsp;&nbsp;&nbsp;&nbsp;Auctioning Systems</p>
                         </a>
                         <hr class="hr11"><br>
-                        <p class="studentlinks">First&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Prev &nbsp;|&nbsp;&nbsp;&nbsp;1 of
+                        <p class="studentlinks">First&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Prev
+                            &nbsp;|&nbsp;&nbsp;&nbsp;1 of
                             2&nbsp;&nbsp;|&nbsp;&nbsp;Next&nbsp;&nbsp;|&nbsp;&nbsp;Last</p>
 
                         <!-- Button for student links -->
@@ -133,7 +181,8 @@
                         <p>Marks Calculator</p>
                         <hr class="hr22"><br>
 
-                        <p class="studentlinks">First&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Prev &nbsp;|&nbsp;&nbsp;&nbsp;1 of
+                        <p class="studentlinks">First&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Prev
+                            &nbsp;|&nbsp;&nbsp;&nbsp;1 of
                             2&nbsp;&nbsp;|&nbsp;&nbsp;Next&nbsp;&nbsp;|&nbsp;&nbsp;Last</p>
 
                         <!-- Button for student links -->
@@ -162,35 +211,40 @@
                     <hr class="hr4"><br>
                     <div class="studentlinkstext">
                         <p style="text-decoration: dotted;">Keivan Navie</p>
-                        <img src='../images/keivan.jpg' class="imageOne" style='float: right; width: 44px; height: 49px;border-radius: 50%;' />
+                        <img src='../images/keivan.jpg' class="imageOne"
+                            style='float: right; width: 44px; height: 49px;border-radius: 50%;' />
                         <p>Director of Teaching, Computer Science (Ghana)</p>
                     </div>
 
                     <hr class="hr44"><br>
                     <div class="studentlinkstext">
                         <p style="text-decoration: dotted;">Phillip Benachour</p>
-                        <img src='../images/philip.jpg' class="imageOne" style='float: right; width: 42px; height: 49px;border-radius: 50%;' />
+                        <img src='../images/philip.jpg' class="imageOne"
+                            style='float: right; width: 42px; height: 49px;border-radius: 50%;' />
                         <p>Director of Studies, Computer Science (Ghana)</p>
                     </div>
                     <hr class="hr44"><br>
 
                     <div class="studentlinkstext">
                         <p>Antonios Gouglidis</p>
-                        <img src='../images/Antonios.jpg' class="imageOne" style='float: right; width: 42px; height: 49px;border-radius: 50%;' />
+                        <img src='../images/Antonios.jpg' class="imageOne"
+                            style='float: right; width: 42px; height: 49px;border-radius: 50%;' />
                         <p>Course Convenor, GHSCC.363</p>
                     </div>
                     <hr class="hr44"><br>
 
                     <div class="studentlinkstext">
                         <p>Barry Porter</p>
-                        <img src='../images/barry.jpg' class="imageOne" style='float: right; width: 45px; height: 49px;border-radius: 50%;' />
+                        <img src='../images/barry.jpg' class="imageOne"
+                            style='float: right; width: 45px; height: 49px;border-radius: 50%;' />
                         <p>Course Convenor, GHSCC.311</p>
                     </div>
                     <hr class="hr44"><br>
 
                     <div class="studentlinkstext">
                         <p>Frederick Heer-Menlah</p>
-                        <img src='../images/unknown.jpg' class="imageOne" style='float: right; width: 44px; height: 48px;border-radius: 50%;' />
+                        <img src='../images/unknown.jpg' class="imageOne"
+                            style='float: right; width: 44px; height: 48px;border-radius: 50%;' />
                         <p>Partner Course Convenor, GHSCC.300</p>
                     </div>
                     <hr class="hr44"><br>
@@ -271,7 +325,7 @@
         </div>
 
 
-
+        <script src="../scripts/upload-file.js"></script>
 </body>
 
 </html>

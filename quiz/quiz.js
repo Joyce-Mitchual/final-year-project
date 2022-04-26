@@ -231,359 +231,259 @@ var keyMaps = {
 var questions = [
   {
     question:
-      'I need to find the way to a shop that a friend has recommended. I would:',
+      'A ________ provides us with named storage that our programs can manipulate.',
     answers: [
       {
-        value: 'Find out where the shop is in relation to somewhere I know.',
+        value: ' data type',
         score: 'K',
+        correct:'variable',
         
       },
       {
-        value: 'Ask my friend to tell me the directions',
+        value: 'constants',
         score: 'A',
+        correct:'variable',
       },
       {
-        value: 'Write down the street directions I need to remember',
+        value: 'operators',
         score: 'R',
+        correct:'variable',
       },
       {
-        value: 'Use a map.',
+        value: 'variable',
         score: 'V',
+        correct:'variable',
       },
     ],
   },
   {
-    question: `A website has a video showing how to make a special graph or chart.There is a person speaking,some
-lists and words describing what to do and some diagrams. I would learn most from:`,
+    question: `Each variable in Java has a specific type, which determines the size and layout of the variable's memory.`,
     answers: [
       {
-        value: ' Find out where the shop is in relation to somewhere I know.',
+        value: ' TRUE',
         score: 'V',
+        correct:'TRUE',
       },
       {
-        value: ' Ask my friend to tell me the directions',
+        value: 'FALSE',
         score: 'A',
+        correct:'TRUE',
       },
       {
-        value: ' Write down the street directions I need to remember',
+        value: ' Can be true or false',
         score: 'R',
+        correct:'TRUE',
       },
       {
-        value: 'Use a map.',
+        value: 'Can not say',
         score: 'K',
+        correct:'TRUE',
       },
     ],
   },
   {
-    question: `I want to find out more about a tour that I am going on. I would:`,
+    question: `To declare more than one variable of the specified type, we can use a __________ list.`,
     answers: [
       {
-        value:
-          'Look at details about the highlights and activities on the tour',
+        value:'colon-separated',
         score: 'K',
+        correct:'comma-separated',
       },
       {
-        value: 'Use a map and see where the places are.',
+        value: 'bracket-separated.',
         score: 'V',
+        correct:'comma-separated',
       },
       {
-        value: 'Read about the tour on the itinerary.',
+        value: 'comma-separated',
         score: 'R',
+        correct:'comma-separated',
       },
       {
-        value: 'Using words well in written communications.',
+        value: 'None of the above',
         score: 'A',
+        correct:'comma-separated',
       },
     ],
   },
   {
-    question: `When choosing a career or area of study, these are important for me:`,
+    question: `How many kinds of variables in Java? `,
     answers: [
       {
-        value: ' Applying my knowledge in real situations.',
+        value: ' 2',
         score: 'K',
+        correct:'3',
       },
       {
-        value: 'Communicating with others through discussion.',
+        value: '3',
         score: 'A',
+        correct:'3',
       },
       {
-        value: 'Working with designs, maps or charts.',
+        value: '4',
         score: 'V',
+        correct:'3',
       },
       {
-        value: 'Using words well in written communications.',
+        value: '5',
         score: 'R',
+        correct:'3',
       },
     ],
   },
   {
-    question: `When I am learning I:`,
+    question: `Local variables are declared in?`,
     answers: [
       {
-        value: 'like to talk things through.',
+        value: 'methods',
         score: 'A',
+        correct:'All of the above',
       },
       {
-        value: 'see patterns in things.',
+        value: 'constructors ',
         score: 'V',
+        correct:'All of the above',
       },
       {
-        value: 'use examples and applications.',
+        value: ' blocks',
         score: 'K',
+        correct:'All of the above',
       },
       {
-        value: 'read books, articles and handouts.',
+        value: 'All of the above ',
         score: 'R',
+        correct:'All of the above',
       },
     ],
   },
 
   {
-    question: `I want to save more money and to decide between a range of options. I would:`,
+    question: `What is true about Instance Variables in java?`,
     answers: [
       {
-        value:
-          'Consider examples of each option using my financial information.',
+        value:'Instance variables are declared in a class',
         score: 'K',
+        correct:'All of the above',
       },
       {
-        value: 'Read a print brochure that describes the options in detail.',
+        value: 'When a space is allocated for an object in the heap, a slot for each instance variable value is created.',
         score: 'R',
+        correct:'All of the above',
       },
       {
-        value:
-          'Use graphs showing different options for different time periods. ',
+        value: 'Instance variables can be declared in class level before or after use  ',
         score: 'V',
+        correct:'All of the above',
       },
       {
-        value: 'Talk with an expert about the options. ',
+        value: 'All of the above ',
         score: 'A',
+        correct:'All of the above',
       },
     ],
   },
 
   {
-    question: `I want to learn how to play a new board game or card game. I would:`,
+    question: `Which variables have no default values?:`,
     answers: [
       {
-        value: 'Watch others play the game before joining in.',
+        value: 'Static Variables',
         score: 'K',
+        correct:'Local Variable',
       },
       {
-        value: 'Listen to somebody explaining it and ask questions ',
+        value: 'Instance Variables  ',
         score: 'A',
+        correct:'Local Variable',
       },
       {
-        value:
-          'Use the diagrams that explain the various stages, moves and strategies in the game ',
+        value: 'Local Variable',
         score: 'V',
+        correct:'Local Variable',
       },
       {
-        value: 'Read the instructions. ',
+        value: 'Both A and B',
         score: 'R',
+        correct:'Local Variable',
       },
     ],
   },
 
   {
-    question: `I have a problem with my heart. I would prefer that the doctor:`,
+    question: `Static variables can be accessed by calling with the?`,
     answers: [
       {
-        value: 'Gave me something to read to explain what was wrong.',
+        value: 'Object name',
         score: 'R',
+        correct:'Class name',
       },
       {
-        value: 'Used a plastic model to show me what was wrong. ',
+        value: 'Class name',
         score: 'K',
+        correct:'Class name',
       },
       {
-        value: 'Described what was wrong.  ',
+        value: 'Function name',
         score: 'A',
+        correct:'Class name',
       },
       {
-        value: 'Showed me a diagram of what was wrong.  ',
+        value: 'Can not say',
         score: 'V',
+        correct:'Class name',
       },
     ],
   },
 
   {
-    question: `I want to learn to do something new on a computer. I would:`,
+    question: `Which of the following is an Example of variable initialization:`,
     answers: [
       {
-        value: 'Read the written instructions that came with the program.',
+        value: 'int a, b, c;',
         score: 'R',
+        correct:'int a = 10, b = 10;',
       },
       {
-        value: 'Talk with people who know about the program. ',
+        value: 'int a = 10, b = 10; ',
         score: 'A',
+        correct:'int a = 10, b = 10;',
       },
       {
-        value: 'Start using it and learn by trial and error.  ',
+        value: 'int 10 = a;',
         score: 'K',
+        correct:'int a = 10, b = 10;',
       },
       {
-        value: 'Follow the diagrams in a book.  ',
+        value: 'None of the above',
         score: 'V',
+        correct:'int a = 10, b = 10;',
       },
     ],
   },
 
   {
-    question: `When learning from the Internet I like:`,
+    question: `Access modifiers cannot be used for local variables.:`,
     answers: [
       {
-        value: 'Videos showing how to do or make things',
+        value: 'Yes',
         score: 'K',
+        correct:'Yes',
       },
       {
-        value: 'Interesting design and visual features. ',
+        value: 'No',
         score: 'V',
+        correct:'Yes',
       },
       {
-        value: 'Interesting written descriptions, lists and explanations.',
+        value: 'Can be yes or no',
         score: 'R',
+        correct:'Yes',
       },
       {
-        value: 'Audio channels where I can listen to podcasts or interviews.',
+        value: ' Can not say ',
         score: 'A',
+        correct:'Yes',
       },
     ],
-  },
-
-  {
-    question: `I want to learn about a new project. I would ask for:`,
-    answers: [
-      {
-        value:
-          'Diagrams to show the project stages with charts of benefits and costs.',
-        score: 'V',
-      },
-      {
-        value: 'A written report describing the main features of the project ',
-        score: 'R',
-      },
-      {
-        value: 'An opportunity to discuss the project',
-        score: 'A',
-      },
-      {
-        value: 'Examples where the project has been used successfully ',
-        score: 'K',
-      },
-    ],
-  },
-
-  {
-    question: `I want to learn how to take better photos. I would:`,
-    answers: [
-      {
-        value: 'Ask questions and talk about the camera and its features. ',
-        score: 'A',
-      },
-      {
-        value: 'Use the written instructions about what to do. ',
-        score: 'R',
-      },
-      {
-        value: 'Use diagrams showing the camera and what each part does ',
-        score: 'V',
-      },
-      {
-        value:
-          'Use examples of good and poor photos showing how to improve them. ',
-        score: 'K',
-      },
-    ],
-  },
-
-  {
-    question: `I prefer a presenter or a teacher who uses:`,
-    answers: [
-      {
-        value: 'Demonstrations, models or practical sessions. ',
-        score: 'K',
-      },
-      {
-        value:
-          'Question and answer, talk, group discussion, or guest speakers ',
-        score: 'A',
-      },
-      {
-        value: 'Handouts, books, or readings. ',
-        score: 'R',
-      },
-      {
-        value: 'Diagrams, charts, maps or graphs ',
-        score: 'V',
-      },
-    ],
-  },
-
-  {
-    question: `I have finished a competition or test and I would like some feedback. I would like to have feedback`,
-    answers: [
-      {
-        value: 'Using examples from what I have done ',
-        score: 'K',
-      },
-      {
-        value: 'Using a written description of my results. ',
-        score: 'R',
-      },
-      {
-        value: 'From somebody who talks it through with me.',
-        score: 'A',
-      },
-      {
-        value: 'Using graphs showing what I achieved.   ',
-        score: 'V',
-      },
-    ],
-  },
-
-  {
-    question: `I want to find out about a house or an apartment. Before visiting it I would want:`,
-    answers: [
-      {
-        value: 'To view a video of the property. ',
-        score: 'K',
-      },
-      {
-        value: 'A discussion with the owner ',
-        score: 'A',
-      },
-      {
-        value: 'A printed description of the rooms and features.',
-        score: 'R',
-      },
-      {
-        value: 'A plan showing the rooms and a map of the area.',
-        score: 'V',
-      },
-    ],
-  },
-
-  {
-    question: `I want to assemble a wooden table that came in parts (kitset). I would learn best from:`,
-    answers: [
-      {
-        value: 'Diagrams showing each stage of the assembly. ',
-        score: 'V',
-      },
-      {
-        value: 'Advice from someone who has done it before. ',
-        score: 'A',
-      },
-      {
-        value: 'Written instructions that came with the parts for the table.',
-        score: 'R',
-      },
-      {
-        value: 'Watching a video of a person assembling a similar table.',
-        score: 'K',
-      },
-    ],
-  },
+  },  
 ];

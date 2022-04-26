@@ -4,12 +4,11 @@ window.onload = function () {
 
         if (user) {
 
-            document.getElementById('loadingGIF').innerHTML = '<span><img src="./images/spiner.gif" height="23px"></span>';
+            document.getElementById('loadingGIF').innerHTML = '<span><img src="../images/spiner.gif" height="23px"></span>';
             document.getElementById('logSubmitBtn').disabled = true;
-            
             getUserDetails(user.email).then(()=>{
                 setTimeout(() => {
-                    window.location.replace("./dashboard/");
+                    window.location.replace("../dashboard/");
                 }, 3000);
             }).catch((error)=>{
                 console.log(error);
@@ -34,7 +33,7 @@ window.onload = function () {
 
         e.preventDefault();
 
-        document.getElementById('loadingGIF').innerHTML = '<span><img src="./images/spiner.gif" height="23px"></span>';
+        document.getElementById('loadingGIF').innerHTML = '<span><img src="../images/spiner.gif" height="23px"></span>';
         document.getElementById('logSubmitBtn').disabled = true;
 
         const email = document.getElementById('email').value;
@@ -54,21 +53,21 @@ window.onload = function () {
 
     });
 
-    document.getElementById('teacherLogin').addEventListener('click', (e)=>{
+    document.getElementById('studentLogin').addEventListener('click', (e)=>{
 
         e.preventDefault();
 
-        window.location.href = "./teacher-login";
+        window.location.href = "../";
 
     });
 
     function getUserDetails(email){
 
         return new Promise((resolve, reject)=>{
-            firebase.firestore().collection('students').where("email", "==", email).get().then((querySnapshot)=>{
+            firebase.firestore().collection('teacher').where("email", "==", email).get().then((querySnapshot)=>{
                 querySnapshot.forEach(doc => {
-                    let studentDetails = JSON.stringify(doc.data());
-                    window.sessionStorage.setItem('studentDetails', studentDetails);
+                    let teacherDetails = JSON.stringify(doc.data());
+                    window.sessionStorage.setItem('teacherDetails', teacherDetails);
                     resolve();
                 });
             });
