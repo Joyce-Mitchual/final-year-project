@@ -4,11 +4,11 @@ var firebase;
 window.addEventListener('load', function () {
   firebase = app_fireBase;
   firebase.auth().onAuthStateChanged((user) => {
-    // console.log(user);
+    console.log(user);
 
     if (user) {
-      db = firebase.firestore();
 
+      db = firebase.firestore();
 
       firebase
         .auth()
@@ -29,16 +29,7 @@ window.addEventListener('load', function () {
           console.log('Current data: ', doc.data());
 
           const user_data = doc.data();
-          // if (user_data?.questionnaireState) {
-            // const maxKey = pickTheLearningStyle(user_data.results.scores);
-
-            // if (maxKey === 'K')
-            //   window.location.href = '../Kinesthetic/index.html';
-            // if (maxKey === 'A') window.location.href = '../Aural/index.html';
-            // if (maxKey === 'V') window.location.href = '../Visual/index.html';
-            // if (maxKey === 'R') window.location.href = '../Read/index.html';
-          // }else{
-            
+          if (user_data) {
             const questionsFrame = document.querySelector(".quest");
             questionsFrame.style.display = 'block';
 
@@ -47,6 +38,9 @@ window.addEventListener('load', function () {
 
             //run loading questions
             run();
+          }
+
+
           // }
         });
     } else {
@@ -59,9 +53,12 @@ window.addEventListener('load', function () {
   function run() {
     const allAnswers = {};
 
+    console.log(questions);
+
     //Render all questions
     for (let i = 0; i < questions.length; i++) {
       const question = questions[i];
+      console.log(question)
       const _question = createQuestion(i, question);
       const container = document.querySelector('#questions-forms');
       // console.log(container);
@@ -82,7 +79,7 @@ window.addEventListener('load', function () {
         const input = document.createElement('input');
         input.type = 'radio';
         input.value = answer.value;
-        input.setAttribute('score', answer.score);
+        input.setAttribute('tag', answer.correct);
         input.setAttribute('id', 'question' + count + 'answer' + i);
         input.setAttribute('name', 'question' + count + 'answer' + count);
         // <label for="html">Find out where the shop is in relation to somewhere I know.</label><br>
@@ -93,10 +90,10 @@ window.addEventListener('load', function () {
         input.addEventListener('change', (event) => {
           console.log(event.target);
 
-          const score = event.target.getAttribute('score');
-          console.log(score);
+          const tag = event.target.getAttribute('tag');
+          console.log(tag);
           const answer = {
-            score: score,
+            tag: tag,
             question: data.question,
             answer: event.target.value,
           };
@@ -126,11 +123,12 @@ window.addEventListener('load', function () {
         alert('You have to complete the questionnaire');
       } else {
         //computer the score
-        const scores = computeScores(allAnswers);
+        const score = computeScores(allAnswers);
 
         // save to firebase
         const data = {
-          scores: scores,
+          score: score,
+          total: questions.length,
           answers: allAnswers,
         };
 
@@ -142,50 +140,33 @@ window.addEventListener('load', function () {
 
   //Go through allAnswers object and count keys
   function computeScores(allAnswers) {
-    let scores = {
-      A: 0,
-      R: 0,
-      V: 0,
-      K: 0,
-    };
+
+    let score = 0;
 
     for (let key in allAnswers) {
       const answer = allAnswers[key];
-      scores[answer.score]++;
+      if (allAnswers[key].tag) {
+        score++;
+      }
     }
 
-    return scores;
+    return score;
   }
 
-  function pickTheLearningStyle(scores) {
-    let max = -Infinity;
-    let maxKey = '';
 
-    Object.keys(scores).forEach((key) => {
-      if (scores[key] > max) {
-        max = scores[key];
-        maxKey = key;
-      }
-    });
-
-    return maxKey;
-  }
 
   //MOCK FIREBASE SAVE : save data to firestore
   function saveToFirebase(data) {
 
-    const maxKey = pickTheLearningStyle(data.scores);
+    // const overlay = document.querySelector('#overlay');
+    // overlay.style.display = 'flex';
 
-    const overlay = document.querySelector('#overlay');
-    overlay.style.display = 'flex';
 
-    const button = document.querySelector('.redirect-user');
-
-    const subheading = document.querySelector('.subheading');
-    subheading.innerHTML =
-      'You are a ' +
-      keyMaps[maxKey] +
-      ' learner. You can go to the content page after your result is uploaded.';
+    // const subheading = document.querySelector('.subheading');
+    // subheading.innerHTML =
+    //   'You scored ' +
+    //   data.score +
+    //   ' out of a ' + data.total;
 
     const ref = db.collection('students').doc(firebase.auth().currentUser.uid);
     ref
@@ -199,23 +180,14 @@ window.addEventListener('load', function () {
       .then(() => {
         console.log('Document successfully written!');
 
-        button.style.display = 'block';
         //hide the spinner
-        const spinner = document.querySelector('#state-loader');
-        spinner.style.display = 'none';
+        //   const spinner = document.querySelector('#state-loader');
+        //   spinner.style.display = 'none';
 
-        //change the heading text
-        const heading = document.querySelector('.heading');
-        heading.innerHTML =
-          'Your Results have been uploaded successfully. Click to proceed to the content page.';
-
-        button.addEventListener('click', (event) => {
-
-          if (maxKey === 'K') window.location.href = '../Kinesthetic/index.html';
-          if (maxKey === 'A') window.location.href = '../Aural/index.html';
-          if (maxKey === 'V') window.location.href = '../Visual/index.html';
-          if (maxKey === 'R') window.location.href = '../Read/index.html';
-        });
+        //   //change the heading text
+        //   const heading = document.querySelector('.heading');
+        //   heading.innerHTML =
+        //     'Your Results have been uploaded successfully. Click to proceed to the content page.';
       });
   }
 });
@@ -236,23 +208,23 @@ var questions = [
       {
         value: ' data type',
         score: 'K',
-        correct:'variable',
-        
+        correct: false,
+
       },
       {
         value: 'constants',
         score: 'A',
-        correct:'variable',
+        correct: false,
       },
       {
         value: 'operators',
         score: 'R',
-        correct:'variable',
+        correct: false,
       },
       {
         value: 'variable',
         score: 'V',
-        correct:'variable',
+        correct: true,
       },
     ],
   },
@@ -262,22 +234,22 @@ var questions = [
       {
         value: ' TRUE',
         score: 'V',
-        correct:'TRUE',
+        correct: true,
       },
       {
         value: 'FALSE',
         score: 'A',
-        correct:'TRUE',
+        correct: false,
       },
       {
         value: ' Can be true or false',
         score: 'R',
-        correct:'TRUE',
+        correct: false,
       },
       {
         value: 'Can not say',
         score: 'K',
-        correct:'TRUE',
+        correct: false,
       },
     ],
   },
@@ -285,24 +257,24 @@ var questions = [
     question: `To declare more than one variable of the specified type, we can use a __________ list.`,
     answers: [
       {
-        value:'colon-separated',
+        value: 'colon-separated',
         score: 'K',
-        correct:'comma-separated',
+        correct: false,
       },
       {
         value: 'bracket-separated.',
         score: 'V',
-        correct:'comma-separated',
+        correct: false,
       },
       {
         value: 'comma-separated',
         score: 'R',
-        correct:'comma-separated',
+        correct: true,
       },
       {
         value: 'None of the above',
         score: 'A',
-        correct:'comma-separated',
+        correct: false,
       },
     ],
   },
@@ -312,22 +284,22 @@ var questions = [
       {
         value: ' 2',
         score: 'K',
-        correct:'3',
+        correct: false,
       },
       {
         value: '3',
         score: 'A',
-        correct:'3',
+        correct: true,
       },
       {
         value: '4',
         score: 'V',
-        correct:'3',
+        correct: false,
       },
       {
         value: '5',
         score: 'R',
-        correct:'3',
+        correct: false,
       },
     ],
   },
@@ -337,22 +309,22 @@ var questions = [
       {
         value: 'methods',
         score: 'A',
-        correct:'All of the above',
+        correct: false,
       },
       {
         value: 'constructors ',
         score: 'V',
-        correct:'All of the above',
+        correct: false,
       },
       {
         value: ' blocks',
         score: 'K',
-        correct:'All of the above',
+        correct: false,
       },
       {
         value: 'All of the above ',
         score: 'R',
-        correct:'All of the above',
+        correct: true,
       },
     ],
   },
@@ -361,24 +333,24 @@ var questions = [
     question: `What is true about Instance Variables in java?`,
     answers: [
       {
-        value:'Instance variables are declared in a class',
+        value: 'Instance variables are declared in a class',
         score: 'K',
-        correct:'All of the above',
+        correct: false,
       },
       {
         value: 'When a space is allocated for an object in the heap, a slot for each instance variable value is created.',
         score: 'R',
-        correct:'All of the above',
+        correct: false,
       },
       {
         value: 'Instance variables can be declared in class level before or after use  ',
         score: 'V',
-        correct:'All of the above',
+        correct: false,
       },
       {
         value: 'All of the above ',
         score: 'A',
-        correct:'All of the above',
+        correct: true,
       },
     ],
   },
@@ -389,22 +361,22 @@ var questions = [
       {
         value: 'Static Variables',
         score: 'K',
-        correct:'Local Variable',
+        correct: false,
       },
       {
         value: 'Instance Variables  ',
         score: 'A',
-        correct:'Local Variable',
+        correct: false,
       },
       {
         value: 'Local Variable',
         score: 'V',
-        correct:'Local Variable',
+        correct: true,
       },
       {
         value: 'Both A and B',
         score: 'R',
-        correct:'Local Variable',
+        correct: false,
       },
     ],
   },
@@ -415,22 +387,22 @@ var questions = [
       {
         value: 'Object name',
         score: 'R',
-        correct:'Class name',
+        correct: false,
       },
       {
         value: 'Class name',
         score: 'K',
-        correct:'Class name',
+        correct: true,
       },
       {
         value: 'Function name',
         score: 'A',
-        correct:'Class name',
+        correct: false,
       },
       {
         value: 'Can not say',
         score: 'V',
-        correct:'Class name',
+        correct: false,
       },
     ],
   },
@@ -441,22 +413,22 @@ var questions = [
       {
         value: 'int a, b, c;',
         score: 'R',
-        correct:'int a = 10, b = 10;',
+        correct: false,
       },
       {
         value: 'int a = 10, b = 10; ',
         score: 'A',
-        correct:'int a = 10, b = 10;',
+        correct: true,
       },
       {
         value: 'int 10 = a;',
         score: 'K',
-        correct:'int a = 10, b = 10;',
+        correct: false,
       },
       {
         value: 'None of the above',
         score: 'V',
-        correct:'int a = 10, b = 10;',
+        correct: false,
       },
     ],
   },
@@ -467,23 +439,23 @@ var questions = [
       {
         value: 'Yes',
         score: 'K',
-        correct:'Yes',
+        correct: true,
       },
       {
         value: 'No',
         score: 'V',
-        correct:'Yes',
+        correct: false,
       },
       {
         value: 'Can be yes or no',
         score: 'R',
-        correct:'Yes',
+        correct: false,
       },
       {
         value: ' Can not say ',
         score: 'A',
-        correct:'Yes',
+        correct: false,
       },
     ],
-  },  
+  },
 ];

@@ -1,6 +1,10 @@
-window.onload = function () {
+console.log("Not working");
 
-    (function () {
+window.addEventListener('load', (event) => {
+    console.log("In event");
+
+    (() => {
+        console.log("In firebase")
 
         let firebase = app_fireBase;
         firebase.auth().onAuthStateChanged(function (user) {
@@ -32,17 +36,21 @@ window.onload = function () {
         });
 
     }
-    
+
     let studentDetails = JSON.parse(sessionStorage.getItem('studentDetails'));
-    if(studentDetails && studentDetails.role === "student"){
+    console.log(studentDetails)
+
+    if (studentDetails && studentDetails.role === "student") {
         document.getElementById('learningStyle').style.display = "none";
     }
 
     let teacherDetails = JSON.parse(sessionStorage.getItem('teacherDetails'));
-    if(teacherDetails && teacherDetails.role === "teacher"){
-        
+    console.log(teacherDetails)
+
+    if (teacherDetails && teacherDetails.role === "teacher") {
+
         document.getElementById('learningStyle').setAttribute("href", "../learning-style");
         document.getElementById('learningStyle').innerText = "Learning Material";
     }
 
-};
+});

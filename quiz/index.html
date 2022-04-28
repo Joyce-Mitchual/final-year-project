@@ -19,13 +19,13 @@
     <script src="../scripts/firebase.js"></script>
     <script src="../scripts/sentinel.js"></script>
 
-    
+    <script defer src="./quiz.js"></script>
 
 
 </head>
 
 <body>
-    <div class="quest">
+    <div style="display :none" class="quest">
 
         <div class="logo">
 
@@ -38,7 +38,8 @@
         </h3>
         <form action="" id="questions-forms">
 
-            <p>1. A ________ provides us with named storage that our programs can manipulate.</p>
+
+            <!-- <p>1. A ________ provides us with named storage that our programs can manipulate.</p>
             <input type="radio" id="html" name="fav_language" value="HTML">
             <label for="html"> A. data type</label><br>
             <input type="radio" id="css" name="fav_language" value="CSS">
@@ -46,10 +47,10 @@
             <input type="radio" id="javascript" name="fav_language" value="JavaScript">
             <label for="javascript">C. operators</label><br>
             <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-            <label for="javascript">D. variable</label><br>
+            <label for="javascript">D. variable</label><br> -->
 
 
-            <p>2.  Each variable in Java has a specific type, which determines the size and layout of the variable's memory.</p>
+            <!-- <p>2.  Each variable in Java has a specific type, which determines the size and layout of the variable's memory.</p>
             <input type="radio" id="html" name="fav_language" value="HTML">
             <label for="html">A. TRUE</label><br>
             <input type="radio" id="css" name="fav_language" value="CSS">
@@ -143,7 +144,7 @@
             <input type="radio" id="javascript" name="fav_language" value="JavaScript">
             <label for="javascript">C. Can be yes or no </label><br>
             <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-            <label for="javascript">D. Can not say  </label><br> 
+            <label for="javascript">D. Can not say  </label><br>  -->
 
 
 
@@ -158,7 +159,13 @@
         </div>
     </div>
 
-    
+
+    <div id="page-loader" class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 
 </body>
 

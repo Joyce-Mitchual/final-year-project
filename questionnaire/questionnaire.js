@@ -30,32 +30,32 @@ window.addEventListener('load', function () {
           console.log('Current data: ', doc.data());
 
           user_data = doc.data();
-          if(user_data.questionnaireState){
+          if (user_data.questionnaireState) {
             handleTestAgain();
             console.log("Taken old test")
 
-          }else{
+          } else {
             console.log("Taken new test")
-            
+
 
           }
           // if (user_data?.questionnaireState) {
-            // const maxKey = pickTheLearningStyle(user_data.results.scores);
+          // const maxKey = pickTheLearningStyle(user_data.results.scores);
 
-            // if (maxKey === 'K')
-            //   window.location.href = '../Kinesthetic/index.html';
-            // if (maxKey === 'A') window.location.href = '../Aural/index.html';
-            // if (maxKey === 'V') window.location.href = '../Visual/index.html';
-            // if (maxKey === 'R') window.location.href = '../Read/index.html';
+          // if (maxKey === 'K')
+          //   window.location.href = '../Kinesthetic/index.html';
+          // if (maxKey === 'A') window.location.href = '../Aural/index.html';
+          // if (maxKey === 'V') window.location.href = '../Visual/index.html';
+          // if (maxKey === 'R') window.location.href = '../Read/index.html';
           // }else{
-            
-            const questionsFrame = document.querySelector(".quest");
-            questionsFrame.style.display = 'block';
 
-            const pageLoader = document.querySelector("#page-loader");
-            pageLoader.style.display = 'none';
-            //run loading questions
-            run();
+          const questionsFrame = document.querySelector(".quest");
+          questionsFrame.style.display = 'block';
+
+          const pageLoader = document.querySelector("#page-loader");
+          pageLoader.style.display = 'none';
+          //run loading questions
+          run();
           // }
         });
     } else {
@@ -191,11 +191,6 @@ window.addEventListener('load', function () {
     const completeFrame = document.querySelector('.completed-test');
     completeFrame.style.display = 'block';
 
-    const promptFrame = document.querySelector('section.prompt-test');
-    console.log(promptFrame);
-    promptFrame.style.display = 'none';
-
-
 
     const button = document.querySelector('.redirect-user');
 
@@ -206,6 +201,12 @@ window.addEventListener('load', function () {
       ' learner. You can go to the content page after your result is uploaded.';
 
     const ref = db.collection('students').doc(firebase.auth().currentUser.uid);
+
+    // -------------------------------------------------------------------------------------
+    const promptFrame = document.querySelector('.prompt-test');
+    promptFrame.style.display = 'none';
+    // -------------------------------------------------------------------------------------
+
     ref
       .set(
         {
@@ -223,6 +224,11 @@ window.addEventListener('load', function () {
         spinner.style.display = 'none';
 
 
+        // -------------------------------------------------------------------------------------
+        // hide the hey toggler
+        const promptFrame = document.querySelector('.prompt-test');
+        promptFrame.style.display = 'none';
+        // -------------------------------------------------------------------------------------
 
         //change the heading text
         const heading = document.querySelector('.heading');
@@ -237,50 +243,58 @@ window.addEventListener('load', function () {
           if (maxKey === 'R') window.location.href = '../Read/index.html';
         });
       });
+
+
+    const _promptFrame = document.querySelector('.prompt-test');
+    console.log(_promptFrame);
+    _promptFrame.style.display = 'none';
+
   }
 
 
-  function handleTestAgain(){
+  function handleTestAgain() {
     const overlayframe = document.querySelector('#overlay');
     overlayframe.style.display = 'flex';
 
     const testTakenFrame = document.querySelector('.prompt-test');
     testTakenFrame.style.display = 'block';
+
+
     const maxKey = pickTheLearningStyle(user_data.results.scores);
 
     const subheading = document.querySelector('.prompt-test .subheading');
     subheading.innerHTML = 'You are a ' +
-    keyMaps[maxKey] +
-    ' learner. You can go to the content page after your result is uploaded.';
+      keyMaps[maxKey] +
+      ' learner. You can go to the content page after your result is uploaded.';
 
 
     const button1 = document.querySelector('.test-again');
     button1.addEventListener('click', (event) => {
       hideoverlayFrame();
-  
+
     });
 
 
     const button2 = document.querySelector('.redirect');
     button2.addEventListener('click', (event) => {
-     
-       if (user_data?.questionnaireState) {
-            // const maxKey = pickTheLearningStyle(user_data.results.scores);
 
-            if (maxKey === 'K'){
-              window.location.href = '../Kinesthetic/index.html';
-            if (maxKey === 'A') window.location.href = '../Aural/index.html';
-            if (maxKey === 'V') window.location.href = '../Visual/index.html';
-            if (maxKey === 'R') window.location.href = '../Read/index.html';
-          }  
-       }
+      if (user_data?.questionnaireState) {
+        // const maxKey = pickTheLearningStyle(user_data.results.scores);
+
+        if (maxKey === 'K') {
+          window.location.href = '../Kinesthetic/index.html';
+          if (maxKey === 'A') window.location.href = '../Aural/index.html';
+          if (maxKey === 'V') window.location.href = '../Visual/index.html';
+          if (maxKey === 'R') window.location.href = '../Read/index.html';
+        }
+      }
     });
 
   }
 
-  function showoverlayFrame(){}
+  function showoverlayFrame() { }
 
-  function hideoverlayFrame(){
+  function hideoverlayFrame() {
     const overlayframe = document.querySelector('#overlay');
     overlayframe.style.display = 'none';
 
@@ -306,7 +320,7 @@ var questions = [
       {
         value: 'Find out where the shop is in relation to somewhere I know.',
         score: 'K',
-        
+
       },
       {
         value: 'Ask my friend to tell me the directions',
