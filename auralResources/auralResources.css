@@ -1,0 +1,184 @@
+.headers {
+    border: 2px solid  #4e080b; ;
+    padding: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 40px;
+    margin-bottom: 12px;
+    margin-top: 30px;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    color: #4e080b;
+    margin-left: 54px;
+    margin-right: 54px;
+    margin-top: -5px;
+    font-family: sans-serif;
+  
+  }
+  
+  .bod {
+    height: 550px;
+    border: 2px solid  #4e080b; ;
+    margin-left: 30px;
+    margin-right: 30px;
+    overflow-y: scroll;
+    margin-bottom: 9px;
+    border-radius: 5px;
+    
+    
+  }
+  
+  
+  
+  .bodText {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 2.3;
+    color: #373a3c;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 13px;
+    padding: 15px;
+    margin-left: 54px;
+    margin-right: 54px;
+    margin-top: -10px;
+    font-weight:500;
+  
+  }
+  
+  .container {
+    margin-left: 9%;
+    margin-right: 5%;
+    /* border: 1px solid saddlebrown; */
+  }
+  
+  .secondRow{
+
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    background-color: rgb(248, 248, 248);
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 7px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {
+    margin: 0 -5px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    width: 70%;
+    height: 180px;
+    padding: 18px;
+    text-align: center;
+    /* border: 1px solid rgb(131, 129, 129); */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  #cardImg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 9px;
+  }
+  
+  .text {
+    font-family: sans-serif;
+    color: #4e080b;
+    font-size: 14px;
+    text-align: start;
+    font-weight: bolder;
+    margin-bottom: -6px;
+  }
+  
+  
+  footer {
+    text-align: center;
+    padding: 3px;
+    background-color: #b5121b;
+    color: white;
+    margin-top:50px;
+    height: 180px;
+    bottom: 0;
+    width: 101%;
+    margin-left: -0.5%;
+  }
+   
+  
+  .bodContent{
+      margin-top: 20px;
+      
+  }
+  
+  #book{
+   color: #757c14;  
+    margin-top: 98px;
+    margin-left: -10px;
+        
+  }
+  
+  #book1{
+   color: #757c14;  
+    margin-top: 9.px;
+    margin-left: -10px;
+        
+  }
+  
+  
+  #lab{
+   color: #6e144d;  
+    margin-top: 20px;
+    
+  }
+  
+  #asses{
+    margin-top: 18px;
+    margin-left: -7px;
+    color:#b5121b
+    
+  }
+  
+  #resources{
+    color: #b5121b;
+    margin-top: 18px;
+    margin-left: -18px;
+    
+  }
+  
+  

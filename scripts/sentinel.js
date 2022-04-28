@@ -32,5 +32,17 @@ window.onload = function () {
         });
 
     }
+    
+    let studentDetails = JSON.parse(sessionStorage.getItem('studentDetails'));
+    if(studentDetails && studentDetails.role === "student"){
+        document.getElementById('learningStyle').style.display = "none";
+    }
+
+    let teacherDetails = JSON.parse(sessionStorage.getItem('teacherDetails'));
+    if(teacherDetails && teacherDetails.role === "teacher"){
+        
+        document.getElementById('learningStyle').setAttribute("href", "../learning-style");
+        document.getElementById('learningStyle').innerText = "Learning Material";
+    }
 
 };

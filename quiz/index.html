@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../quiz/quiz.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
+
+    <!-- <script src="../scripts/door-keeper.js"></script> -->
+    <script src="../scripts/firebase.js"></script>
+    <script src="../scripts/sentinel.js"></script>
+
+    
+
+
+</head>
+
+<body>
+    <div class="quest">
+
+        <div class="logo">
+
+        </div>
+
+        <p class="head">QUIZ</p>
+
+        <h3 class="paragraph">Choose the answer which best explains your preference and select it.
+            Please pick an answer that matches your perception and Please Do well to Answer All Questions.
+        </h3>
+        <form action="" id="questions-forms">
+
+            <p>1. A ________ provides us with named storage that our programs can manipulate.</p>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html"> A. data type</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">B. constants</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">C. operators</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">D. variable</label><br>
+
+
+            <p>2.  Each variable in Java has a specific type, which determines the size and layout of the variable's memory.</p>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">A. TRUE</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css"> B. FALSE</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">C. Can be true or false</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript"> D. Can not say</label><br>
+
+
+            <p>3.To declare more than one variable of the specified type, we can use a __________ list.</p>  
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">A. colon-separated</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">B. bracket-separated.</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript"> C. comma-separated</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript"> D. None of the above</label><br>
+
+
+            <p>4.How many kinds of variables in Java? </p>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">A. 2</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css"> B. 3</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">  C. 4 </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">D. 5</label><br>
+
+            <p>5.Local variables are declared in?</p>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">A. methods</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">B. constructors  </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">C. blocks </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">D. All of the above </label><br>
+
+
+            <p>6. What is true about Instance Variables in java? </p>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">A.Instance variables are declared in a class</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">B.When a space is allocated for an object in the heap, a slot for each instance variable value is created.  </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">C.Instance variables can be declared in class level before or after use  </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">D.All of the above  </label><br>
+
+            
+            <p>7. Which variables have no default values? </p>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">A.Static Variables</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">B.Instance Variables </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">C.Local Variable  </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">D.Both A and B</label><br>
+
+
+
+            <p>8. Static variables can be accessed by calling with the?</p>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">A.Object name</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">B.Class name</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">C.Function name </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">D.Can not say  </label><br> 
+
+            <p>9. Which of the following is an Example of variable initialization:</p>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">A.int a, b, c;</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">B. int a = 10, b = 10; </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">C.int 10 = a; </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">D.None of the above  </label><br> 
+
+            <p>10. Access modifiers cannot be used for local variables.:</p>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">A.Yes</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">B.No </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">C. Can be yes or no </label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">D. Can not say  </label><br> 
+
+
+
+
+        </form>
+
+        <div class="submitb">
+            <a>
+                <button id="submit" class="button button1">Submit</button>
+            </a>
+
+        </div>
+    </div>
+
+    
+
+</body>
+
+</html>

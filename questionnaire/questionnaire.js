@@ -306,6 +306,7 @@ var questions = [
       {
         value: 'Find out where the shop is in relation to somewhere I know.',
         score: 'K',
+        
       },
       {
         value: 'Ask my friend to tell me the directions',
