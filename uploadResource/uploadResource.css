@@ -1,0 +1,110 @@
+body{
+    background-color: #3d3d3d;
+  }
+  
+  input[type=text],
+  select {
+      width: 45%;
+      padding: 12px 20px;
+      margin: 7px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #535353;
+      color: white;
+  }
+  
+  
+  .divform {
+      border-radius: 5px;
+      background-color: #333333;
+      padding: 20px;
+      margin-top: 60px;
+      width: 80%;
+      margin: auto;
+      border: 1px solid #3d3d3d;
+      margin-bottom: -20px;
+      color: white;
+  }
+  
+  
+  label {
+      color: white;
+      font-size: 19px;
+  
+  }
+  
+  .navbar {
+      overflow: hidden;
+      background-color: #333;
+      margin-bottom: 50px;
+    }
+    
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+    
+    .dropdown .dropbtn {
+      font-size: 16px;  
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+    
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: rgb(109, 7, 7);
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      min-width: 160px; 
+      z-index: 1;
+      
+      
+    }
+     .boxx{
+       border: 2px solid white;
+       padding: 10px;
+       margin-top: -11px;
+     }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+      width: 70%;
+      height: max-content;
+    }
+  
+     #file{
+      
+     width: 90%;
+      margin-bottom: 20px;
+    } 
+  
+    button{
+      width: 160px;
+      height: 45px;
+      background-color: rgb(95, 8, 8);
+      color: white;
+      border-radius: 4px;
+      font-size: 15px;
+      margin-top: 12px;
+     
+    }
+  
+    

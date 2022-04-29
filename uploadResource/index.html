@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>boxes</title>
+    <link rel="stylesheet" href="../uploadResource/uploadResource.css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
+    <script src="../scripts/firebase.js"></script>
+    <script defer src="../scripts/sentinel.js"></script>
+
+    <script src="../scripts/upload-file.js"></script>
+</head>
+
+<body class="bod">
+    <div class="navbar">
+        <a href="../dashboard/index.html">Dashboard</a>
+
+
+        <!-- <div class="dropdown">
+            <button class="dropbtn">
+                Upload Resources
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <div class="divform">
+                    <form>
+                        <p style="margin-top: -9px; margin-bottom: 30px">
+                            UPLOAD RESOURCES
+                        </p>
+                        <div class="boxx">
+                            <p style="margin-bottom: 2px; margin-top: -3px">
+                                SELECT PAGE YOU WANT TO UPLOAD THE RESOURCES TO:
+                            </p>
+                            <select id="country" name="country">
+                                <option value="australia">Visual Page</option>
+                                <option value="canada">Aural Page</option>
+                                <option value="usa">Read/Write Page</option>
+                                <option value="usa">Kinesthetic Page</option>
+                            </select>
+                        </div>
+                    </form>
+                    <br />
+                    <br />
+
+                    <div>
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="boxx">
+                                <p>CHOOSE FILE TO UPLOAD:</p>
+                                <input type="file" class="buttonn" id="file" name="file" multiple />
+                            </div>
+                            <div>
+                                <button id="filebutton">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="divform">
+        <form>
+
+            <p>UPLOAD RESOURCES</p>
+            <P>SELECT PAGE YOU WANT TO UPLOAD THE RESOURCES TO:</P>
+            <select id="country" name="country">
+                <option value="australia">Visual Page</option>
+                <option value="canada">Aural Page</option>
+                <option value="usa">Read/Write Page</option>
+                <option value="usa">Kinesthetic Page</option>
+
+            </select>
+        </form>
+
+
+        <div>
+            <form method="post" enctype="multipart/form-data">
+                <div>
+                    <p>CHOOSE FILE TO UPLOAD:</p>
+                    <input type="file" class="buttonn" id="fileToUpload" name="fileToUpload">
+                </div>
+                <div>
+                    <button id="filebutton">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="quiz"></div>
+</body>
+
+</html>
