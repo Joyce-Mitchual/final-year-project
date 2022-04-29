@@ -51,6 +51,11 @@ window.addEventListener('load', (event) => {
 
         document.getElementById('learningStyle').setAttribute("href", "../learning-style");
         document.getElementById('learningStyle').innerText = "Learning Material";
+
+
+        document.getElementById('drop').innerText = "Upload Resources";
     }
+
+
 
 });
