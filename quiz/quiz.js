@@ -1,6 +1,7 @@
 //
 var db;
 var firebase;
+var user_data;
 window.addEventListener('load', function () {
   firebase = app_fireBase;
   firebase.auth().onAuthStateChanged((user) => {
@@ -28,7 +29,7 @@ window.addEventListener('load', function () {
         .onSnapshot((doc) => {
           console.log('Current data: ', doc.data());
 
-          const user_data = doc.data();
+          user_data = doc.data();
           if (user_data) {
             const questionsFrame = document.querySelector(".quest");
             questionsFrame.style.display = 'block';
@@ -138,6 +139,9 @@ window.addEventListener('load', function () {
     });
   }
 
+
+
+
   //Go through allAnswers object and count keys
   function computeScores(allAnswers) {
 
@@ -146,7 +150,7 @@ window.addEventListener('load', function () {
     for (let key in allAnswers) {
       console.log(key);
       const answer = allAnswers[key];
-      if (allAnswers[key].tag.toString().trim().toLowerCase() ==='true' ) {
+      if (allAnswers[key].tag.toString().trim().toLowerCase() === 'true') {
         score++;
       }
     }
@@ -154,6 +158,19 @@ window.addEventListener('load', function () {
     return score;
   }
 
+  function pickTheLearningStyle(scores) {
+    let max = -Infinity;
+    let maxKey = '';
+
+    Object.keys(scores).forEach((key) => {
+      if (scores[key] > max) {
+        max = scores[key];
+        maxKey = key;
+      }
+    });
+
+    return maxKey;
+  }
 
 
   //MOCK FIREBASE SAVE : save data to firestore
@@ -176,8 +193,8 @@ window.addEventListener('load', function () {
       .set(
         {
           quizes: {
-            'variable' : {
-             ...data
+            'variable': {
+              ...data
             }
           },
         },
@@ -186,13 +203,25 @@ window.addEventListener('load', function () {
         console.log('Document successfully written!');
 
         //hide the spinner
-          const spinner = document.querySelector('#state-loader');
-          spinner.style.display = 'none';
+        const spinner = document.querySelector('#state-loader');
+        spinner.style.display = 'none';
 
         //   //change the heading text
-          const heading = document.querySelector('.heading');
-          heading.innerHTML =
-            'Your Results have been uploaded successfully.';
+        const heading = document.querySelector('.heading');
+        heading.innerHTML =
+          'Your Results have been uploaded successfully.';
+
+        const maxKey = pickTheLearningStyle(user_data.results.scores);
+        const button = document.querySelector('.redirect-user');
+        button.addEventListener('click', (event) => {
+          console.log('clicked');
+          if (maxKey === 'K') window.location.href = '../Kinesthetic/index.html';
+          if (maxKey === 'A') window.location.href = '../Aural/index.html';
+          if (maxKey === 'V') window.location.href = '../Visual/index.html';
+          if (maxKey === 'R') window.location.href = '../Read/index.html';
+        });
+
+
       });
   }
 });
