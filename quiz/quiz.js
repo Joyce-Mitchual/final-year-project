@@ -144,8 +144,9 @@ window.addEventListener('load', function () {
     let score = 0;
 
     for (let key in allAnswers) {
+      console.log(key);
       const answer = allAnswers[key];
-      if (allAnswers[key].tag ==='true') {
+      if (allAnswers[key].tag.toString().trim().toLowerCase() ==='true' ) {
         score++;
       }
     }
