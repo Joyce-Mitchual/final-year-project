@@ -145,7 +145,7 @@ window.addEventListener('load', function () {
 
     for (let key in allAnswers) {
       const answer = allAnswers[key];
-      if (allAnswers[key].tag) {
+      if (allAnswers[key].tag ==='true') {
         score++;
       }
     }
@@ -167,16 +167,18 @@ window.addEventListener('load', function () {
     //   'You scored ' +
     //   data.score +
     //   ' out of a ' + data.total;
-
+    console.log("Uploading pics", data)
     const ref = db.collection('students').doc(firebase.auth().currentUser.uid);
     ref
       .set(
         {
-          questionnaireState: true,
-          results: data,
+          quizes: {
+            'variable' : {
+             ...data
+            }
+          },
         },
-        { merge: true }
-      )
+        { merge: true })
       .then(() => {
         console.log('Document successfully written!');
 

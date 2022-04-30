@@ -236,7 +236,7 @@ window.addEventListener('load', function () {
           'Your Results have been uploaded successfully.<br> Click to proceed to the content page.';
 
         button.addEventListener('click', (event) => {
-
+          console.log('clicked');
           if (maxKey === 'K') window.location.href = '../Kinesthetic/index.html';
           if (maxKey === 'A') window.location.href = '../Aural/index.html';
           if (maxKey === 'V') window.location.href = '../Visual/index.html';
@@ -277,16 +277,15 @@ window.addEventListener('load', function () {
 
     const button2 = document.querySelector('.redirect');
     button2.addEventListener('click', (event) => {
-
+      console.log("Clicked")
       if (user_data?.questionnaireState) {
-        // const maxKey = pickTheLearningStyle(user_data.results.scores);
-
-        if (maxKey === 'K') {
-          window.location.href = '../Kinesthetic/index.html';
+        const maxKey = pickTheLearningStyle(user_data.results.scores);
+        console.log(user_data)
+          if (maxKey === 'K') window.location.href = '../Kinesthetic/index.html';
           if (maxKey === 'A') window.location.href = '../Aural/index.html';
           if (maxKey === 'V') window.location.href = '../Visual/index.html';
           if (maxKey === 'R') window.location.href = '../Read/index.html';
-        }
+        
       }
     });
 

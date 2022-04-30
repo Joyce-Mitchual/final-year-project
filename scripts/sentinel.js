@@ -42,6 +42,8 @@ window.addEventListener('load', (event) => {
 
     if (studentDetails && studentDetails.role === "student") {
         document.getElementById('learningStyle').style.display = "none";
+        document.getElementById('uploadResource').style.display = "none";
+
     }
 
     let teacherDetails = JSON.parse(sessionStorage.getItem('teacherDetails'));
@@ -53,7 +55,7 @@ window.addEventListener('load', (event) => {
         document.getElementById('learningStyle').innerText = "Learning Material";
 
 
-        document.getElementById('drop').innerText = "Upload Resources";
+        document.getElementById('uploadResource').style.display = "block";
     }
 
 
