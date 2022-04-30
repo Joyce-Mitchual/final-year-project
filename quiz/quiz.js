@@ -159,15 +159,17 @@ window.addEventListener('load', function () {
   //MOCK FIREBASE SAVE : save data to firestore
   function saveToFirebase(data) {
 
-    // const overlay = document.querySelector('#overlay');
-    // overlay.style.display = 'flex';
+    const overlay = document.querySelector('#overlay');
+    overlay.style.display = 'flex';
 
+    console.log(overlay);
 
-    // const subheading = document.querySelector('.subheading');
-    // subheading.innerHTML =
-    //   'You scored ' +
-    //   data.score +
-    //   ' out of a ' + data.total;
+    const subheading = document.querySelector('.subheading');
+    subheading.innerHTML =
+      'You scored ' +
+      data.score +
+      ' out of a ' + data.total;
+
     console.log("Uploading pics", data)
     const ref = db.collection('students').doc(firebase.auth().currentUser.uid);
     ref
@@ -184,13 +186,13 @@ window.addEventListener('load', function () {
         console.log('Document successfully written!');
 
         //hide the spinner
-        //   const spinner = document.querySelector('#state-loader');
-        //   spinner.style.display = 'none';
+          const spinner = document.querySelector('#state-loader');
+          spinner.style.display = 'none';
 
         //   //change the heading text
-        //   const heading = document.querySelector('.heading');
-        //   heading.innerHTML =
-        //     'Your Results have been uploaded successfully. Click to proceed to the content page.';
+          const heading = document.querySelector('.heading');
+          heading.innerHTML =
+            'Your Results have been uploaded successfully.';
       });
   }
 });
