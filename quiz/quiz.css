@@ -68,6 +68,38 @@
       
   
     } */
+
+    .heading {
+      color: #fff;
+      font-size: 20px;
+    }
+    
+    .subheading {
+      color: #fff;
+      font-size: 16px;
+    }
+
+#overlay {
+  position: fixed;
+  display:none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid grey;
+
+  width: 50%;
+  height: 50%;
+  text-align:center ;
+  margin: auto;
+  font-family: 'Times New Roman', Times, serif;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(1, 1, 1, 0.86);
+  z-index: 2;
+  cursor: pointer;
+}
   
   button:hover {
     background-color: rgb(112, 14, 14);
