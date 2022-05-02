@@ -77,17 +77,18 @@ function buildTable(data) {
     tableDataEmail.innerHTML = data.email;
 
     const tableDataPassword = document.createElement('td');
-    if (data.questionnaireState) {
-        const result = Object.keys(data.results.scores).reduce((prev, current) => {
+    if (data.quizes) {
+
+        const result = Object.keys(data.quizes).reduce((prev, current) => {
             console.log(prev, current)
-            const res = prev + " <br> <br>  " + current + " - " + data.results.scores[current];
+            const res = prev + " <br> <br>  " + current + " - " + data.quizes[current].score +" out of "+ data.quizes[current].total;
             return res;
         }, "");
 
         tableDataPassword.innerHTML = result;
 
     } else {
-        tableDataPassword.innerHTML = "No Test"
+        tableDataPassword.innerHTML = "No Quize"
     }
     tableRow.appendChild(tableDataEmail);
     tableRow.appendChild(tableDataPassword);
