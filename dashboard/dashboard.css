@@ -48,13 +48,17 @@ li {
 #searchbar {
   width: 150%;
   height: 40px;
-  margin-left: 280px;
+  margin-left: 175px;
   font-size: 13px;
   background-color: #4b4b4b;
   color: white;
   border: 1px solid white;
   margin-bottom: 2px;
 
+}
+
+#fname{
+margin-left: -360px;
 }
 
 
