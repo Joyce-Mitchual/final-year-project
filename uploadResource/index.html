@@ -71,31 +71,31 @@
     </div>
 
     <div class="divform">
-        <form>
+        <form id="fileUploadForm" role="form" enctype="multipart/form-data">
 
-            <p>UPLOAD RESOURCES</p>
-            <P>SELECT PAGE YOU WANT TO UPLOAD THE RESOURCES TO:</P>
-            <select id="country" name="country">
-                <option value="australia">Visual Page</option>
-                <option value="canada">Aural Page</option>
-                <option value="usa">Read/Write Page</option>
-                <option value="usa">Kinesthetic Page</option>
+            <h2>UPLOAD RESOURCES</h2>
+            <label>SELECT PAGE YOU WANT TO UPLOAD THE RESOURCES TO:</label>
+            <select id="materialType" name="materialType">
+                <option value="visual">Visual Page</option>
+                <option value="aural">Aural Page</option>
+                <option value="read-write">Read/Write Page</option>
+                <option value="kinesthetic">Kinesthetic Page</option>
 
             </select>
+            <div>&nbsp;</div>
+            <div>
+                <label>CHOOSE FILE TO UPLOAD:</label><br>
+                <input type="file" class="buttonn" id="fileToUpload" name="fileToUpload">
+            </div>
+            <div>&nbsp;</div>
+            <div class="centerMan">
+                <div id="fileUploadErrorDiv"></div>
+            </div>
+            <div>&nbsp;</div>
+            <div>
+                <button type="submit" id="filebutton">Submit</button>
+            </div>
         </form>
-
-
-        <div>
-            <form method="post" enctype="multipart/form-data">
-                <div>
-                    <p>CHOOSE FILE TO UPLOAD:</p>
-                    <input type="file" class="buttonn" id="fileToUpload" name="fileToUpload">
-                </div>
-                <div>
-                    <button id="filebutton">Submit</button>
-                </div>
-            </form>
-        </div>
     </div>
 
     <div class="quiz"></div>

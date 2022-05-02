@@ -8,42 +8,202 @@ window.onload = function () {
 
                 e.preventDefault();
 
-                const ref = firebase.storage().ref();
-                let compDoc = document.getElementById("fileToUpload").files[0];
-                const name = (+new Date()) + '-' + compDoc.name;
+                document.getElementById('fileUploadErrorDiv').innerHTML =
+                    '<div class="alert alert-dismissible alert-danger">' +
+                    '<button class="close" data-dismiss="alert"></button><br> uploading...' +
+                    '</div>';
 
-                const metadata = {
-                    contentType: compDoc.type
-                };
+                let materialType = document.getElementById('materialType').value;
 
-                const task = ref.child(name).put(compDoc, metadata);
-                task.then(snapshot => snapshot.ref.getDownloadURL()).then((url) => {
+                if (materialType === 'visual') {
 
-                    let httpsReference = firebase.storage().refFromURL(url);
-                    const profileImageFileName = httpsReference.name;
+                    const ref = firebase.storage().ref();
+                    let compDoc = document.getElementById("fileToUpload").files[0];
+                    const name = (+new Date()) + '-' + compDoc.name;
 
-                    firebase.firestore().collection('teacher').where("email", "==", user.email).get().then((querySnapshot) => {
-                        const teacherID = querySnapshot.docs[0].id;
-                        firebase.firestore().collection('teacher').doc(teacherID).collection('files').add({
-                            profileImageURL: url,
-                            profileImageFileName: profileImageFileName
+                    const metadata = {
+                        contentType: compDoc.type
+                    };
+
+                    const task = ref.child(name).put(compDoc, metadata);
+                    task.then(snapshot => snapshot.ref.getDownloadURL()).then((url) => {
+
+                        let httpsReference = firebase.storage().refFromURL(url);
+                        const profileImageFileName = httpsReference.name;
+
+                        firebase.firestore().collection('teacher').where("email", "==", user.email).get().then((querySnapshot) => {
+                            const teacherID = querySnapshot.docs[0].id;
+                            firebase.firestore().collection('teacher').doc(teacherID).collection('files').add({
+                                profileImageURL: url,
+                                profileImageFileName: profileImageFileName,
+                                type: 'visual'
+                            }).then(() => {
+                                document.getElementById('fileUploadErrorDiv').innerHTML = 'file uploaded, please wait...';
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 3000);
+                            });
                         });
+
+
+                    }).catch((error) => {
+
+                        document.getElementById('filebutton').disabled = false;
+                        document.getElementById('fileUploadErrorDiv').innerHTML =
+                            '<div class="alert alert-dismissible alert-danger">' +
+                            '<button class="close" data-dismiss="alert"></button><br> ' + error +
+                            '</div>';
+
+                        return;
+
                     });
-
-
-                }).then(() => {
-                    console.log('done');
-                }).catch((error) => {
-
-                    document.getElementById('fileUploadButton').disabled = false;
-                    document.getElementById('fileUploadErrorDiv').innerHTML =
-                        '<div class="alert alert-dismissible alert-danger">' +
-                        '<button class="close" data-dismiss="alert"></button><br> ' + error +
-                        '</div>';
 
                     return;
 
-                });
+                }
+
+                if (materialType === 'aural') {
+
+                    const ref = firebase.storage().ref();
+                    let compDoc = document.getElementById("fileToUpload").files[0];
+                    const name = (+new Date()) + '-' + compDoc.name;
+
+                    const metadata = {
+                        contentType: compDoc.type
+                    };
+
+                    const task = ref.child(name).put(compDoc, metadata);
+                    task.then(snapshot => snapshot.ref.getDownloadURL()).then((url) => {
+
+                        let httpsReference = firebase.storage().refFromURL(url);
+                        const profileImageFileName = httpsReference.name;
+
+                        firebase.firestore().collection('teacher').where("email", "==", user.email).get().then((querySnapshot) => {
+                            const teacherID = querySnapshot.docs[0].id;
+                            firebase.firestore().collection('teacher').doc(teacherID).collection('files').add({
+                                profileImageURL: url,
+                                profileImageFileName: profileImageFileName,
+                                type: 'aural'
+                            }).then(() => {
+                                document.getElementById('fileUploadErrorDiv').innerHTML = 'file uploaded, please wait...';
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 3000);
+                            });
+                        });
+
+
+                    }).catch((error) => {
+
+                        document.getElementById('filebutton').disabled = false;
+                        document.getElementById('fileUploadErrorDiv').innerHTML =
+                            '<div class="alert alert-dismissible alert-danger">' +
+                            '<button class="close" data-dismiss="alert"></button><br> ' + error +
+                            '</div>';
+
+                        return;
+
+                    });
+
+                    return;
+
+                }
+
+
+                if (materialType === 'read-write') {
+
+                    const ref = firebase.storage().ref();
+                    let compDoc = document.getElementById("fileToUpload").files[0];
+                    const name = (+new Date()) + '-' + compDoc.name;
+
+                    const metadata = {
+                        contentType: compDoc.type
+                    };
+
+                    const task = ref.child(name).put(compDoc, metadata);
+                    task.then(snapshot => snapshot.ref.getDownloadURL()).then((url) => {
+
+                        let httpsReference = firebase.storage().refFromURL(url);
+                        const profileImageFileName = httpsReference.name;
+
+                        firebase.firestore().collection('teacher').where("email", "==", user.email).get().then((querySnapshot) => {
+                            const teacherID = querySnapshot.docs[0].id;
+                            firebase.firestore().collection('teacher').doc(teacherID).collection('files').add({
+                                profileImageURL: url,
+                                profileImageFileName: profileImageFileName,
+                                type: 'read-write'
+                            }).then(() => {
+                                document.getElementById('fileUploadErrorDiv').innerHTML = 'file uploaded, please wait...';
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 3000);
+                            });
+                        });
+
+
+                    }).catch((error) => {
+
+                        document.getElementById('filebutton').disabled = false;
+                        document.getElementById('fileUploadErrorDiv').innerHTML =
+                            '<div class="alert alert-dismissible alert-danger">' +
+                            '<button class="close" data-dismiss="alert"></button><br> ' + error +
+                            '</div>';
+
+                        return;
+
+                    });
+
+                    return;
+
+                }
+
+
+                if (materialType === 'kinesthetic') {
+
+                    const ref = firebase.storage().ref();
+                    let compDoc = document.getElementById("fileToUpload").files[0];
+                    const name = (+new Date()) + '-' + compDoc.name;
+
+                    const metadata = {
+                        contentType: compDoc.type
+                    };
+
+                    const task = ref.child(name).put(compDoc, metadata);
+                    task.then(snapshot => snapshot.ref.getDownloadURL()).then((url) => {
+
+                        let httpsReference = firebase.storage().refFromURL(url);
+                        const profileImageFileName = httpsReference.name;
+
+                        firebase.firestore().collection('teacher').where("email", "==", user.email).get().then((querySnapshot) => {
+                            const teacherID = querySnapshot.docs[0].id;
+                            firebase.firestore().collection('teacher').doc(teacherID).collection('files').add({
+                                profileImageURL: url,
+                                profileImageFileName: profileImageFileName,
+                                type: 'kinesthetic'
+                            }).then(() => {
+                                document.getElementById('fileUploadErrorDiv').innerHTML = 'file uploaded, please wait...';
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 3000);
+                            });
+                        });
+
+
+                    }).catch((error) => {
+
+                        document.getElementById('filebutton').disabled = false;
+                        document.getElementById('fileUploadErrorDiv').innerHTML =
+                            '<div class="alert alert-dismissible alert-danger">' +
+                            '<button class="close" data-dismiss="alert"></button><br> ' + error +
+                            '</div>';
+
+                        return;
+
+                    });
+
+                    return;
+
+                }
 
             });
 

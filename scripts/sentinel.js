@@ -38,24 +38,41 @@ window.addEventListener('load', (event) => {
     }
 
     let studentDetails = JSON.parse(sessionStorage.getItem('studentDetails'));
-    console.log(studentDetails)
 
     if (studentDetails && studentDetails.role === "student") {
-        document.getElementById('learningStyle').style.display = "none";
-        document.getElementById('uploadResource').style.display = "none";
+
+        if (document.getElementById('learningStyle')) {
+            document.getElementById('learningStyle').style.display = "none";
+            document.getElementById('uploadResource').style.display = "none";
+        }
+
+        document.getElementById('teacherResource').style.display = 'nonne';
 
     }
 
     let teacherDetails = JSON.parse(sessionStorage.getItem('teacherDetails'));
-    console.log(teacherDetails)
 
     if (teacherDetails && teacherDetails.role === "teacher") {
 
-        document.getElementById('learningStyle').setAttribute("href", "../learning-style");
-        document.getElementById('learningStyle').innerText = "Learning Material";
+        if (document.getElementById('learningStyle')) {
 
+            document.getElementById('learningStyle').setAttribute("href", "../learning-style");
+            document.getElementById('learningStyle').innerText = "Learning Material";
 
-        document.getElementById('uploadResource').style.display = "block";
+        }
+
+        if (document.getElementById('uploadResource')) {
+
+            document.getElementById('uploadResource').style.display = "block";
+
+        }
+
+        if (document.getElementById('teacherResults')) {
+
+            document.getElementById('teacherResults').style.display = "block";
+
+        }
+
     }
 
 
