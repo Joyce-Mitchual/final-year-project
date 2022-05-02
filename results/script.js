@@ -81,14 +81,14 @@ function buildTable(data) {
 
         const result = Object.keys(data.quizes).reduce((prev, current) => {
             console.log(prev, current)
-            const res = prev + " <br> <br>  " + current + " - " + data.quizes[current].score +" out of "+ data.quizes[current].total;
+            const res = prev + " <br> <br>  " + current + " - " + data.quizes[current].score + " out of " + data.quizes[current].total;
             return res;
         }, "");
 
         tableDataPassword.innerHTML = result;
 
     } else {
-        tableDataPassword.innerHTML = "No Quize"
+        tableDataPassword.innerHTML = "No Quiz"
     }
     tableRow.appendChild(tableDataEmail);
     tableRow.appendChild(tableDataPassword);

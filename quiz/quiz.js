@@ -121,7 +121,7 @@ window.addEventListener('load', function () {
       const keysCount = Object.keys(allAnswers).length;
 
       if (keysCount !== questions.length) {
-        alert('You have to complete the questionnaire');
+        alert('You have to complete the quiz');
       } else {
         //computer the score
         const score = computeScores(allAnswers);
