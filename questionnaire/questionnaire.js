@@ -5,7 +5,6 @@ var user_data;
 window.addEventListener('load', function () {
   firebase = app_fireBase;
   firebase.auth().onAuthStateChanged((user) => {
-    // console.log(user);
 
     if (user) {
       db = firebase.firestore();
@@ -30,25 +29,17 @@ window.addEventListener('load', function () {
           console.log('Current data: ', doc.data());
 
           user_data = doc.data();
+
           if (user_data.questionnaireState) {
             handleTestAgain();
             console.log("Taken old test")
-
           } else {
             console.log("Taken new test")
-
-
+            const promptFrame = document.querySelector('#prompt-test');
+            promptFrame.style.display = 'none';
+            console.log(promptFrame);
           }
-          // if (user_data?.questionnaireState) {
-          // const maxKey = pickTheLearningStyle(user_data.results.scores);
-
-          // if (maxKey === 'K')
-          //   window.location.href = '../Kinesthetic/index.html';
-          // if (maxKey === 'A') window.location.href = '../Aural/index.html';
-          // if (maxKey === 'V') window.location.href = '../Visual/index.html';
-          // if (maxKey === 'R') window.location.href = '../Read/index.html';
-          // }else{
-
+ 
           const questionsFrame = document.querySelector(".quest");
           questionsFrame.style.display = 'block';
 
@@ -203,8 +194,9 @@ window.addEventListener('load', function () {
     const ref = db.collection('students').doc(firebase.auth().currentUser.uid);
 
     // -------------------------------------------------------------------------------------
-    const promptFrame = document.querySelector('.prompt-test');
+    const promptFrame = document.querySelector('#prompt-test');
     promptFrame.style.display = 'none';
+    console.log(promptFrame);
     // -------------------------------------------------------------------------------------
 
     ref
@@ -226,7 +218,7 @@ window.addEventListener('load', function () {
 
         // -------------------------------------------------------------------------------------
         // hide the hey toggler
-        const promptFrame = document.querySelector('.prompt-test');
+        const promptFrame = document.querySelector('#prompt-test');
         promptFrame.style.display = 'none';
         // -------------------------------------------------------------------------------------
 
@@ -245,9 +237,9 @@ window.addEventListener('load', function () {
       });
 
 
-    const _promptFrame = document.querySelector('.prompt-test');
-    console.log(_promptFrame);
-    _promptFrame.style.display = 'none';
+    // const _promptFrame = document.querySelector('#prompt-test');
+    // console.log(_promptFrame);
+    // _promptFrame.style.display = 'none';
 
   }
 
@@ -256,13 +248,13 @@ window.addEventListener('load', function () {
     const overlayframe = document.querySelector('#overlay');
     overlayframe.style.display = 'flex';
 
-    const testTakenFrame = document.querySelector('.prompt-test');
+    const testTakenFrame = document.querySelector('#prompt-test');
     testTakenFrame.style.display = 'block';
 
 
     const maxKey = pickTheLearningStyle(user_data.results.scores);
 
-    const subheading = document.querySelector('.prompt-test .subheading');
+    const subheading = document.querySelector('#prompt-test .subheading');
     subheading.innerHTML = 'You are a ' +
       keyMaps[maxKey] +
       ' learner. You can go to the content page after your result is uploaded.';
@@ -297,8 +289,8 @@ window.addEventListener('load', function () {
     const overlayframe = document.querySelector('#overlay');
     overlayframe.style.display = 'none';
 
-    const promptFrame = document.querySelector('.prompt-test');
-    promptFrame.style.display = 'none';
+    // const promptFrame = document.querySelector('#prompt-test');
+    // promptFrame.style.display = 'none';
   }
 
 });

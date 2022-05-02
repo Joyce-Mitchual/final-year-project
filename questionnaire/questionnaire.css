@@ -88,6 +88,9 @@ body {
   align-items: center;
   flex-direction: column;
 }
+#prompt-test{
+  display: none;
+}
  
 #overlay {
   position: fixed;
