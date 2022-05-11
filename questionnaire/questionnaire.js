@@ -39,7 +39,7 @@ window.addEventListener('load', function () {
             promptFrame.style.display = 'none';
             console.log(promptFrame);
           }
- 
+
           const questionsFrame = document.querySelector(".quest");
           questionsFrame.style.display = 'block';
 
@@ -273,11 +273,11 @@ window.addEventListener('load', function () {
       if (user_data?.questionnaireState) {
         const maxKey = pickTheLearningStyle(user_data.results.scores);
         console.log(user_data)
-          if (maxKey === 'K') window.location.href = '../Kinesthetic/index.html';
-          if (maxKey === 'A') window.location.href = '../Aural/index.html';
-          if (maxKey === 'V') window.location.href = '../Visual/index.html';
-          if (maxKey === 'R') window.location.href = '../Read/index.html';
-        
+        if (maxKey === 'K') window.location.href = '../Kinesthetic/index.html';
+        if (maxKey === 'A') window.location.href = '../Aural/index.html';
+        if (maxKey === 'V') window.location.href = '../Visual/index.html';
+        if (maxKey === 'R') window.location.href = '../Read/index.html';
+
       }
     });
 
